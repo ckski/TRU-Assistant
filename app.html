@@ -15,6 +15,8 @@
 </head>
 
 <style>
+/* Banner styling */
+
 .banner-bar {
 	background-color: #f5f5f5;
 
@@ -29,6 +31,59 @@ grey700 #616161
 */
 
 }
+</style>
+
+<style>
+/* Filter dialog styling */
+
+
+</style>
+
+<style>
+/* Schedule visualization styling */
+
+
+table.schedule-table {
+
+} 
+
+/* Styling for table headers */
+.schedule-table tr > th:nth-child(1) {
+	width: 70px;
+}
+
+.schedule-table .day-header {
+	color: blue;
+}
+
+/* Styling for body rows */
+.schedule-table tbody tr {
+	height: 50px;
+}
+
+/* Styling for the first column */
+.schedule-table tr > *:nth-child(1) {
+	color: red;
+}
+
+
+
+.schedule-table td.course-item {
+	padding: 0;
+	position: absolute;
+	margin-top: -1px;
+	border: 0;
+}
+
+.schedule-table td.course-item > div {
+	display: inline-block;
+	background-color: green;
+	height: 50px;
+	width: 50px;
+}
+
+/* For styling nth column */
+/*  .table tr > *:nth-child(2)   */
 
 
 </style>
@@ -41,14 +96,55 @@ grey700 #616161
 <h1>TRU Assistant</h1>
 </div>
 
-<div>
+<div class='container'>
 <!-- Dynamic filter dialog is here -->
 Filter Dialog
 </div>
 
-<div>
+<div class='container'>
 <!-- Schedule visualization goes here -->
 Schedule
+
+<table class="table schedule-table">
+	<thead>
+	  <tr>
+	    <th>Time</th>
+	    <th class='day-header'>Monday</th>
+	    <th class='day-header'>Tuesday</th>
+	    <th class='day-header'>Wednesday</th>
+	    <th class='day-header'>Thursday</th>
+	    <th class='day-header'>Friday</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+	    <td>8:30</td>
+	    <td class='course-item'><div class='schedule-course-item'></div></td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td>9:30</td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr>
+	    <td>10:30</td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	</tbody>
+</table>
+
+
 </div>
 
 </body>
