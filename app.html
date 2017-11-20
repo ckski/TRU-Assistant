@@ -12,6 +12,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
+	
+	
+	<!-- Colour resources: https://www.tru.ca/brandguide/colours.html   !-->
+	
 
 
 </head>
@@ -89,6 +93,7 @@ $(document).ready(() => {
 
 body{
 	
+	background-color:  #fff5de;
 
 }
 
@@ -97,8 +102,14 @@ body{
 	color: black;
 	/* text-align:center; */
 	
-	/* border: 2px solid  #125ed1; */
+	/* border: 2px solid  #003e51; */
 	
+
+}
+
+.main-content{
+
+	background-color:#f3f3f3;
 
 }
 
@@ -142,14 +153,16 @@ grey700 #616161
 	
 	float: left;
 	width: 150px;
-	
+	margin-left: 15%;
 	margin-top: 10px;
 
 }
 
 .header-text{
 
-	position: absolute-center;
+	left: calc(50vw - 150px);
+	position: absolute;
+	
 
 }
 
@@ -246,9 +259,9 @@ grey700 #616161
 
 li:hover {
 	
-	color: #125ed1;
+	color: #003e51;
 	background-color: #e0e2e5;
-	 /* border: 1px solid  #125ed1; */
+	 /* border: 1px solid  #003e51; */
 	cursor: pointer;
 	/* font-weight: bold; */
 	
@@ -260,10 +273,10 @@ li:hover {
 
 .schedule-box{
 	background-color: #e0e2e5;
-	color: #125ed1;
+	color: #003e51;
 	text-align:center;
-	border-radius: 25px;
-	border: 2px solid  #125ed1;
+	<!-- border-radius: 25px; 
+	border: 2px solid  #003e51;!-->
 
 }
 
@@ -276,7 +289,7 @@ li:hover {
 table.schedule-table {
 	
 	background-color: white;
-	border: 1px solid #125ed1;
+	border: 1px solid #003e51;
 	
 }
 
@@ -375,7 +388,7 @@ table.schedule-table {
 <img src="images/trulogo.png" class="logo-image"/>
 <h1 class="header-text">TRU Assistant</h1>
 </div>
-
+<div class="container main-content">
 <div class='container filter'>
 <!-- Dynamic filter dialog is here -->
 
@@ -391,7 +404,7 @@ table.schedule-table {
 </select>
 
 <br/><br/>
-<div class='container'>
+<!-- <div class='container'> !-->
 
 <ul class="list-group primary-list">
     <li class="list-group-item" onclick="handleListClick.call(this)">
@@ -658,8 +671,8 @@ table.schedule-table {
   </ul>
 
 </div>
-</div>
-<div class='container schedule-box'>
+<!-- </div> -->
+<div class='schedule-box'>
 <!-- Schedule visualization goes here -->
 <h1 style="text-align:center"> Schedule </h1>
 
@@ -884,7 +897,7 @@ table.schedule-table {
 	</tbody>
 </table>
 
-
+</div>
 </div>
 
 </body>
