@@ -102,7 +102,7 @@ body{
 	color: black;
 	/* text-align:center; */
 	
-	/* border: 2px solid  #003e51; */
+
 	
 
 }
@@ -275,8 +275,8 @@ li:hover {
 	background-color: #e0e2e5;
 	color: #003e51;
 	text-align:center;
-	<!-- border-radius: 25px; 
-	border: 2px solid  #003e51;!-->
+
+	
 
 }
 
@@ -285,11 +285,20 @@ li:hover {
 <style>
 /* Schedule visualization styling */
 
+.schedule-header{
+
+	background-color:#003e51;
+	color: white;
+
+}
+
+
+
 
 table.schedule-table {
 	
 	background-color: white;
-	border: 1px solid #003e51;
+	<!-- border: 1px solid #003e51; !-->
 	
 }
 
@@ -343,7 +352,7 @@ table.schedule-table {
 	background-color: cyan;
 	height: 50px;
 	width: 50px;
-	border: #757575 1px solid;
+	border: #757575 1px solid;  /* These two arent doing anything maybe */
 	border-left: none;
 }
 
@@ -674,7 +683,10 @@ table.schedule-table {
 <!-- </div> -->
 <div class='schedule-box'>
 <!-- Schedule visualization goes here -->
+
+<div class="schedule-header">
 <h1 style="text-align:center"> Schedule </h1>
+</div>
 
 <table class="table schedule-table">
 	<thead>
