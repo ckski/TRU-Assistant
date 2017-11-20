@@ -23,6 +23,11 @@
 
 <script>
 
+const ROW_HEIGHT = 50;
+const SLOT_WIDTH = 50;
+
+var scheduleVizTable = [{}, {}, {}, {}, {}, {}, {}];
+
 function getCellByDayTime(day, time) {
 	// day is integer 0-6, time is string '0830' or '0800'
 
@@ -43,17 +48,40 @@ function CourseCollection() {
 
 function CourseItem(data, parent) {
 	this.title = data.title;
-	this.colorIndex = 0;
+	this.colorIndex = data.color;
 	this.parent = parent;
+	this.duration = data.duration;
+	this.start = data.start;
+	this.xPosition = -1;
+	this.width = 1;
 	// this.dom = [];
 	// this.blockDom
 	// this.textDom
 }
 
-const COLORS = ['#00FFFF'];
+
+// TODO: add colors
+const COLORS = ['#00FFFF', '#FFFF00'];
+var unassigned_colors = [1, 0];  
 
 CourseItem.prototype.getColor = function() {
 	return COLORS[this.colorIndex];
+};
+
+CourseItem.prototype.setWidth = function(width) {
+	this.width = width;
+	// TODO: update dom element with new width.
+	if (this.blockDom) {
+		this.blockDom.css('width', width * SLOT_WIDTH)
+	}
+};
+
+CourseItem.prototype.setXPosition = function(xPos) {
+	this.xPosition = xPos;
+	// TODO: update dom element with new xposition.
+	if (this.blockDom) {
+		this.blockDom.css('left', xPos * SLOT_WIDTH);
+	}
 };
 
 
@@ -66,7 +94,9 @@ function addCourseItemToCell(course_item, $cell) {
 
 	// TODO: color selection, based on conflicts with adjacent courses.
 
-	$block.css('background-color', course_item.getColor());   
+	$block.css('background-color', course_item.getColor());
+	$block.css('height', course_item.duration * ROW_HEIGHT / 30);
+
 	$text.css('color', course_item.getColor());
 
 	$cell.children('.course-item-blocks').append($block);
@@ -74,11 +104,212 @@ function addCourseItemToCell(course_item, $cell) {
 }
 
 
+function timeStringAddMinutes(time, m) {
+	// '0830' + 30 => '0900'
+	var i_start = Number(time);
+	var i_start_h = Math.trunc(i_start / 100);  // Get hours.
+	var i_start_min = i_start - i_start_h * 100; // Get minutes.
+	
+	var i_end_h = i_start_h;
+	var i_end_min = i_start_min + m;
+
+	// i_end_min = Math.ceil(i_end_min / 30) * 30;  // Round to nearest half hour.
+	
+	// Shift excess minutes to hours.
+	i_end_h += Math.floor(i_end_min / 60);
+	i_end_min = i_end_min % 60; 
+
+	var i_end = i_end_h * 100 + i_end_min;  // Convert back to single number.
+	i_end =  i_end.toString().padStart(4, '0')					// Pad to 4 digits.
+
+	return i_end;
+}
+
+function addCourseToTable(course_offering) {
+
+	// var $cell = getCellByDayTime(1, '0830');
+	var parent = course_offering;  // parent is course_offering
+
+	var times = course_offering.times;
+
+	var color = unassigned_colors.pop();
+
+	for (var t in times) {
+		var time = times[t];
+		var data = {title: course_offering.courseNumber, duration: time.duration, start: time.start, color: color};
+		var item = new CourseItem(data, parent);
+
+		var day = time.day;
+		var start = time.start;
+
+		var $cell = getCellByDayTime(day, start);
+		addCourseItemToCell(item, $cell);
+
+		var blocks_touched = [];
+
+		// For each time block overlapped.
+		for (var i = 0; i <= time.duration; i += 30) {
+			var t = timeStringAddMinutes(start, i);
+
+			if (!scheduleVizTable[day][t]) {
+				scheduleVizTable[day][t] = [];
+			}
+			scheduleVizTable[day][t].push(item)
+			blocks_touched.push({day: day, time: t});
+		}
+
+		// console.log(scheduleVizTable);
+
+		doBlockLayout(blocks_touched);
+
+		// console.log(scheduleVizTable);
+	}
+
+}
+
+
+function doBlockLayout(blocks) {
+	// blocks :: [{day: int(), time: str()}]
+
+	function getFirstAvailableSlot(slots) {
+		for (var i = 0; i < slots.length; i++) {
+			if (slots[i] === null) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	function getLastPositionedItem(slots, thisBlock) {
+		for (var i = slots.length; i > 0; i--) {
+			if (slots[i].start != thisBlock.start) {
+				return i;
+			}
+			return -1;
+		}
+	}
+
+	function tryPushItemOver(slots, blockStart) {
+		// Base cases
+		if (slots.length < 2) {
+			return false;
+		}
+		if (slots[1] === null) {
+			return [slots[0]];
+		}
+
+		// Next slot is being positioned in this block.
+		if (slots[1].start == blockStart) {
+			new_slots = tryPushItemOver(slots.slice(1), blockStart);
+			if (!new_slots) {
+				return false;
+			} else {
+				return [slots[0]].concat(new_slots);
+			}
+		} else {
+			// Next slot cannot be shifted over. So skip over it
+			new_slots = tryPushItemOver(slots.slice(2), blockStart);
+			if (!new_slots) {
+				return false;
+			} else {
+				return [slots[1], slots[0]].concat(new_slots);
+			}
+		}
+	}
+
+	for (var b in blocks) {
+		var block = blocks[b];
+		var items = scheduleVizTable[block.day][block.time];
+		// console.log(items);
+		var slots = [null, null, null, null, null, null, null, null, null, null, null, null];
+
+		// Add each positioned item.
+		for (var i in items) {
+			var item = items[i];
+			if (item.xPosition >= 0) {  // If already positioned.
+				for (var j = 0; j < item.width; j++) {
+					slots[item.xPosition + j] = item;
+				}
+			}
+		}
+
+		// TODO: sort the unpositioned blocks by (start, duration).
+
+		// Loop through each unpositioned item.
+		for (var i in items) {
+			var item = items[i];
+			if (item.xPosition >= 0) {
+				continue;
+			}
+			// For unpositioned blocks.
+			var next_available_slot = getFirstAvailableSlot(slots);
+			if (next_available_slot < 0) {
+				// Reduce last positioned item.
+				var last_positioned = getLastPositionedItem(slots, block);
+				if (last_positioned < 0) {
+					console.error('NOT ENOUGH SLOTS');
+				} else {
+					var last_positioned_block = slots[last_positioned];
+					var new_width = Math.floor(last_positioned_block.width / 2);
+					var delta_width = last_positioned_block.width - new_width;
+					last_positioned_block.setWidth(new_width);
+
+					console.log('freeing slots', slots);
+
+					// Free the slots.
+					for (var j = 0; j < delta_width; j++) {
+						slots[last_positioned + j] = null;
+					}
+
+					console.log('freed slots', slots);
+				}
+			} else {
+				// We have an available slot.
+				slots[next_available_slot] = item;
+				// console.log("positioning", item, "at", next_available_slot);
+				item.setXPosition(next_available_slot);
+				item.setWidth(item.width);
+			}
+		}
+
+		// Expansion step
+		// while (true) {
+		// 	for (var i = 0; i < slots.length; i++) {
+		// 		if (slots[i].start != block.start) {		// Ignore slots positioned earlier.
+		// 			continue;
+		// 		}
+
+		// 		// Next slot is empty or is being positioned in this block.
+		// 		if (slots[i+1] === null || (slots[i+1] && slots[i+1].start == block.start)) {
+		// 			new_slots = tryPushItemOver(slots.slice(i+1), block.start);
+		// 		}
+		// 	}
+
+		// 	break;
+		// }
+
+
+	}
+}
+
+
 $(document).ready(() => {
 	// Load data.
-	var $mon_830 = getCellByDayTime(1, '0830');
-	var parent = {};
-	addCourseItemToCell(new CourseItem({title: 'COMP333'}, parent), $mon_830);
+	
+	var comp333 = {
+		title: 'Course title',
+		courseNumber: 'COMP333',
+		times: [{start: '0930', day: 1, duration: 50, type: 'L'}, {start: '0930', day: 3, duration: 50, type: 'L'}]
+	};
+
+	var comp777 = {
+		title: 'Course title',
+		courseNumber: 'COMP777',
+		times: [{start: '0930', day: 1, duration: 80, type: 'L'}]
+	};
+
+	addCourseToTable(comp333);
+	addCourseToTable(comp777);
 
 });
 
@@ -349,24 +580,25 @@ table.schedule-table {
 
 .schedule-table td.course-item .course-item-block {
 	display: inline-block;
-	background-color: cyan;
+	/*background-color: cyan;*/
 	height: 50px;
-	width: 50px;
+	/*width: 50px;*/
 	border: #757575 1px solid;  /* These two arent doing anything maybe */
-	border-left: none;
+	/*border-left: none;*/
+	position: absolute;
 }
 
 .schedule-table td.course-item > .course-item-blocks > div:nth-child(n+2) {
-	margin-left: -4px;
+	margin-left: -1px;
 }
 
-.schedule-table td.course-item > .course-item-blocks > div:first-child {
-	/*display: inline-block;
+/*.schedule-table td.course-item > .course-item-blocks > div:first-child {
+	display: inline-block;
 	background-color: cyan;
 	height: 48px;
-	width: 48px;*/
+	width: 48px;
 	border: #757575 1px solid;
-}
+}*/
 
 .schedule-table div.course-item-texts {
 	position: absolute;
@@ -700,7 +932,7 @@ table.schedule-table {
 	  </tr>
 	</thead>
 	<tbody>
-	
+
 	  <!-- <tr class='0800'>
 	    <td><span class='time-00-text'>8:00AM</span></td>
 	    <td class='course-item'>
