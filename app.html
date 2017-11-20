@@ -17,11 +17,62 @@
 
 <script>
 
+function getCellByDayTime(day, time) {
+	// day is integer 0-6, time is string '0830' or '0800'
+
+	// TODO: Check day and time are valid.
+
+	var time_key = time;
+	var $cells = $('.schedule-table tr.' + time_key + ' td');
+
+	// $cells[1 + i - 1] // First cell is time label, then Sunday is skipped.
+	return $($cells[day]);
+}
+
+
+function CourseCollection() {
+
+}
+
+
+function CourseItem(data, parent) {
+	this.title = data.title;
+	this.colorIndex = 0;
+	this.parent = parent;
+	// this.dom = [];
+	// this.blockDom
+	// this.textDom
+}
+
+const COLORS = ['#00FFFF'];
+
+CourseItem.prototype.getColor = function() {
+	return COLORS[this.colorIndex];
+};
+
+
+function addCourseItemToCell(course_item, $cell) {
+	var $block = $("<div class='course-item-block'></div>");
+	var $text = $("<div class='course-item-text'>" + course_item.title + "</div>");
+
+	course_item.blockDom = $block;
+	course_item.textDom = $text;
+
+	// TODO: color selection, based on conflicts with adjacent courses.
+
+	$block.css('background-color', course_item.getColor());   
+	$text.css('color', course_item.getColor());
+
+	$cell.children('.course-item-blocks').append($block);
+	$cell.children('.course-item-texts').append($text);
+}
+
+
 $(document).ready(() => {
-
 	// Load data.
-
-
+	var $mon_830 = getCellByDayTime(1, '0830');
+	var parent = {};
+	addCourseItemToCell(new CourseItem({title: 'COMP333'}, parent), $mon_830);
 
 });
 
@@ -125,7 +176,7 @@ grey700 #616161
 
 table.schedule-table {
 
-} 
+}
 
 /* Styling for table headers */
 .schedule-table tr > th:nth-child(1) {
@@ -150,7 +201,7 @@ table.schedule-table {
 	color: red;
 }
 
-.schedule-table tr.half > *:nth-child(1) > span.time-30-text {
+.schedule-table tr > *:nth-child(1) > span.time-30-text {
 	display: none;
 }
 
@@ -193,11 +244,14 @@ table.schedule-table {
 	border: #757575 1px solid;
 }
 
+.schedule-table div.course-item-texts {
+	position: absolute;
+}
+
 .schedule-table div.course-item-text {
 	display: block;
 	width: 200px;
 	color: magenta;
-	position: absolute;
 	font-size: 16px;
 	font-weight: 600;
 	text-shadow: 0px 0px 5px black, 1px 1px 1px black, -1px -1px 1px black, 0px 1px 1px black, 1px 0px 1px black;
@@ -278,30 +332,32 @@ Filter Dialog
 	  </tr>
 	</thead>
 	<tbody>
-	  <tr class='8'>
+	  <tr class='0800'>
 	    <td><span class='time-00-text'>8:00AM</span></td>
 	    <td class='course-item'>
 	    	<div class='course-item-blocks'>
 	    		<div class='course-item-block'></div>
 	    		<div class='course-item-block'></div>
 	    	</div>
-	    	<div class='course-item-text'>COMP3450</div>
+	    	<div class='course-item-texts'>
+	    		<div class='course-item-text'>COMP3450</div>
+	    		<div class='course-item-text'>COMP3550</div>
+	    	</div>
 	    </td>
 	    <td></td>
 	    <td></td>
 	    <td></td>
 	    <td></td>
 	  </tr>
-	  <tr class='8.5 half'>
+	  <tr class='0830'>
 	    <td><span class='time-30-text'>8:30AM</span></td>
-	    <td class='course-item'>
-	    </td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	  </tr>
-	  <tr class='9'>
+	  <tr class='0900'>
 	    <td>9:00AM</td>
 	    <td></td>
 	    <td></td>
@@ -309,13 +365,13 @@ Filter Dialog
 	    <td></td>
 	    <td></td>
 	  </tr>
-	  <tr class='9.5 half'>
+	  <tr class='0930'>
 	    <td><span class='time-30-text'>9:30AM</span></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	  </tr>
 	</tbody>
 </table>
