@@ -24,7 +24,8 @@
 <script>
 
 const ROW_HEIGHT = 50;
-const SLOT_WIDTH = 50;
+const COLUMN_WIDTH = 211;
+const SLOT_WIDTH = COLUMN_WIDTH / 12;  // 12 slots
 
 var scheduleVizTable = [{}, {}, {}, {}, {}, {}, {}];
 
@@ -181,7 +182,7 @@ function doBlockLayout(blocks) {
 	}
 
 	function getLastPositionedItem(slots, thisBlock) {
-		for (var i = slots.length; i > 0; i--) {
+		for (var i = slots.length-1; i >= 0; i--) {
 			if (slots[i].start != thisBlock.start) {
 				return i;
 			}
@@ -195,7 +196,7 @@ function doBlockLayout(blocks) {
 			return false;
 		}
 		if (slots[1] === null) {
-			return [slots[0]];
+			return [slots[0]].concat(slots.slice(2));
 		}
 
 		// Next slot is being positioned in this block.
@@ -220,7 +221,10 @@ function doBlockLayout(blocks) {
 	for (var b in blocks) {
 		var block = blocks[b];
 		var items = scheduleVizTable[block.day][block.time];
-		// console.log(items);
+		
+		console.log('Doing layout for block', block);
+		console.log(items);
+
 		var slots = [null, null, null, null, null, null, null, null, null, null, null, null];
 
 		// Add each positioned item.
@@ -232,6 +236,8 @@ function doBlockLayout(blocks) {
 				}
 			}
 		}
+
+		console.log("positioned items are", slots);
 
 		// TODO: sort the unpositioned blocks by (start, duration).
 
@@ -254,11 +260,11 @@ function doBlockLayout(blocks) {
 					var delta_width = last_positioned_block.width - new_width;
 					last_positioned_block.setWidth(new_width);
 
-					console.log('freeing slots', slots);
+					console.log('freeing slots', slots, last_positioned_block, delta_width);
 
 					// Free the slots.
 					for (var j = 0; j < delta_width; j++) {
-						slots[last_positioned + j] = null;
+						slots[last_positioned - j] = null;
 					}
 
 					console.log('freed slots', slots);
@@ -273,20 +279,37 @@ function doBlockLayout(blocks) {
 		}
 
 		// Expansion step
-		// while (true) {
-		// 	for (var i = 0; i < slots.length; i++) {
-		// 		if (slots[i].start != block.start) {		// Ignore slots positioned earlier.
-		// 			continue;
-		// 		}
+		var can_push = true;
+		while (can_push) {
+			for (var i = 0; i < slots.length; i++) {
+				if (slots[i] === null) {	// Skip empty slots.
+					continue;
+				}
 
-		// 		// Next slot is empty or is being positioned in this block.
-		// 		if (slots[i+1] === null || (slots[i+1] && slots[i+1].start == block.start)) {
-		// 			new_slots = tryPushItemOver(slots.slice(i+1), block.start);
-		// 		}
-		// 	}
+				// console.log(slots[i].start)
 
-		// 	break;
-		// }
+				if (slots[i].start != block.time) {		// Ignore slots positioned earlier.
+					continue;
+				}
+
+				// Next slot is empty or is being positioned in this block.
+				if (slots[i+1] === null || (slots[i+1] && slots[i+1].start == block.time)) {
+					new_slots = tryPushItemOver(slots.slice(i), block.time);
+					if (!new_slots) {
+						can_push = false;
+						break;
+					} else {
+						new_slots = slots.slice(0, i).concat([slots[i]].concat(new_slots))
+						slots = new_slots;
+						slots[i].setWidth(slots[i].width+1);
+						
+						console.log('new slots', new_slots);
+					}
+				}
+			}
+
+			break;
+		}
 
 
 	}
@@ -299,13 +322,14 @@ $(document).ready(() => {
 	var comp333 = {
 		title: 'Course title',
 		courseNumber: 'COMP333',
-		times: [{start: '0930', day: 1, duration: 50, type: 'L'}, {start: '0930', day: 3, duration: 50, type: 'L'}]
+		// times: [{start: '0930', day: 1, duration: 30, type: 'L'}, {start: '0930', day: 3, duration: 50, type: 'L'}]
+		times: [{start: '0930', day: 1, duration: 30, type: 'L'}]
 	};
 
 	var comp777 = {
 		title: 'Course title',
 		courseNumber: 'COMP777',
-		times: [{start: '0930', day: 1, duration: 80, type: 'L'}]
+		times: [{start: '0930', day: 1, duration: 30, type: 'L'}]
 	};
 
 	addCourseToTable(comp333);
@@ -529,7 +553,7 @@ li:hover {
 table.schedule-table {
 	
 	background-color: white;
-	<!-- border: 1px solid #003e51; !-->
+	table-layout: fixed;
 	
 }
 
@@ -538,7 +562,7 @@ table.schedule-table {
 	width: 70px;
 }
 .schedule-table tr > th:nth-child(n+2) {
-	width: 240px;  /* Width of the columns for each day */
+	width: 200px;  /* Width of the columns for each day */
 }
 
 
