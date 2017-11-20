@@ -1,0 +1,193 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+    // TODO Make list dict thing
+    // DONE CRN TIMES ID DAYS TYPE
+    //
+    function parseTimes(timeList){
+
+        var atime = totalTime.split('-')[0].replace(/\s+/g, "").replace("am","");
+        var btime = totalTime.split('-')[1].replace(/\s+/g, "").replace("am","");
+
+        var atimeInt;
+        var btimeInt; 
+
+        var aDate = new Date()
+        var bDate = new Date()
+
+        var ahours = 0
+        var aminutes = 0
+
+        var bhours = 0
+        var bminutes = 0
+
+        if(atime.indexOf("pm") > -1){
+            atime.replace("pm","")
+            if(parseInt(atime.split(":")[0]) < 12){
+                ahours += 12;       
+            }
+        }
+
+        if(btime.indexOf("pm") > -1){
+            btime.replace("pm","")
+            if(parseInt(btime.split(":")[0]) < 12){
+                bhours += 12;       
+            }
+        }
+
+        ahours += parseInt(atime.split(":")[0]);
+        aminutes += parseInt(atime.split(":")[1]);
+
+        bhours += parseInt(btime.split(":")[0]) ;
+        bminutes += parseInt(btime.split(":")[1]);
+       
+        aDate.setHours(ahours);
+        aDate.setMinutes(aminutes);
+  
+        bDate.setHours(bhours);
+        bDate.setMinutes(bminutes);
+
+        var miliDur = Math.abs(aDate - bDate);
+
+
+        
+        return miliDur/1000/60;
+    }
+
+    function parseCRN(title){
+        //"Title": "Financial Accounting (3,0,0) - 11381 - ACCT 1000 - 02 ",
+        //console.log(title);
+        crn = title.split("-")[1].replace(/\s+/g, "")
+        return parseInt(crn);
+    }
+
+    function parseDays(days){
+        outDays = []
+        for(var day in days){
+            switch(days[day]){
+                case 'M':
+                    outDays.push(0);
+                    break;
+                case 'T':
+                    outDays.push(1);
+                    break;
+                case 'W':
+                    outDays.push(2);
+                    break;
+                case 'R':
+                    outDays.push(3);
+                    break;
+                case 'F':
+                    outDays.push(4);
+                    break;
+                case 'S':
+                    outDays.push(5);
+                    break;
+            }
+        }
+        return outDays;
+    }
+
+    function parseID(title){
+        //"Title": "Financial Accounting (3,0,0) - 11381 - ACCT 1000 - 02 ",
+        //console.log(title);
+        idList = title.split("-");
+        id = idList[idList.length - 2].replace(" ","");
+        //console.log(id)
+        return id;
+    }
+
+    function parseType(type){
+        switch(type){
+            case 'Seminar':
+                return 'S';
+            case 'Lecture':
+                return 'L';
+            case 'Combined lecture, lab, seminar':
+                return 'L';
+            default:
+                return 'L';
+        }
+    }
+
+    function getStartTime(timeList){
+
+        var atime = totalTime.split('-')[0].replace(/\s+/g, "").replace("am","");
+
+        var atimeInt;
+
+        var ahoursString = "";
+
+        var ahours = 0
+        var aminutes = 0
+
+        if(atime.indexOf("pm") > -1){
+            atime.replace("pm","")
+            if(parseInt(atime.split(":")[0]) < 12){
+                ahours += 12;       
+            }
+        }
+        ahours += parseInt(atime.split(":")[0]);
+        aminutes += parseInt(atime.split(":")[1]);
+
+        if(String(ahours).length == 1){
+            ahoursString = "0"+ahours;
+        }else{
+            ahoursString = ""+ahours
+        }
+
+        return (ahoursString + aminutes);
+        
+    }
+
+	$.getJSON('https://yourtru.ca/2017/classes.json', function(data) {
+	Classjson = data;
+	NewClassJson = {};
+	for (var classes in Classjson){
+
+    	totalTime = Classjson[classes]['Times'];
+        title = Classjson[classes]['Title'];
+        daysList = Classjson[classes]['Days'];
+        fullType = Classjson[classes]['Type'];
+        //startTime = 
+
+    	if(totalTime.split('-')[0] == undefined || totalTime.split('-')[1] == undefined) continue;//dont do anything for tba
+
+        var dur = parseTimes(totalTime.split('-')) //int in minutes
+
+        var crn = parseCRN(title); //int
+
+        var id = parseID(title); //string COMP 1130
+
+        var days = parseDays(daysList); //list of ints where Mon = 0 etc
+
+        var type = parseType(fullType); //a char of either L or S
+
+        var startTime = getStartTime(totalTime);
+
+        //if(!isNaN(parseInt(id))) console.log(Classjson[classes]); //old error checking
+
+        NewClassJson[crn] = {
+            'ID':id,
+            'start':startTime,
+            'duration':dur,
+            'days':days,
+            'type':type
+        }
+
+        //console.log(dur)
+        //console.log(Classjson[classes])
+        // if(isNaN(dur)){
+        //     console.log(Classjson[classes])
+        // }
+
+	}
+
+
+    //console.log(JSON.stringify(NewClassJson));
+
+});
+</script>
+</head>
+
