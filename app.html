@@ -87,11 +87,16 @@ $(document).ready(() => {
 <style>
 /* Banner styling */
 
+body{
+	
+
+}
+
 .container{
 	
 	color: black;
 	/* text-align:center; */
-
+	
 	/* border: 2px solid  #125ed1; */
 	
 
@@ -111,11 +116,14 @@ $(document).ready(() => {
 
 
 .banner-bar {
-	background-color: #e0e2e5;
-	color: #125ed1;
+	background-color:#003e51;
+	color: white;
 	text-align:center;
-	border-radius: 25px;
-	border: 2px solid  #125ed1;
+	position: fixed;
+	width: 100%;
+
+	z-index: 999;
+	height: 10%;
 	
 
 /*
@@ -127,6 +135,21 @@ grey500 #9e9e9e
 grey600 #757575
 grey700 #616161
 */
+
+}
+
+.logo-image{
+	
+	float: left;
+	width: 150px;
+	
+	margin-top: 10px;
+
+}
+
+.header-text{
+
+	position: absolute-center;
 
 }
 
@@ -171,6 +194,21 @@ grey700 #616161
 	
 	width:15px; 
 	height:15px;
+
+
+}
+.image-inner{
+	display:none;
+	width:10px; 
+	height:10px;
+
+
+}
+
+.image-left-inner{
+	
+	width:10px; 
+	height:10px;
 
 
 }
@@ -334,12 +372,16 @@ table.schedule-table {
 <body>
 <div class='banner-bar'>
 <!-- Banner goes here -->
-<h1>TRU Assistant</h1>
+<img src="images/trulogo.png" class="logo-image"/>
+<h1 class="header-text">TRU Assistant</h1>
 </div>
 
 <div class='container filter'>
 <!-- Dynamic filter dialog is here -->
 
+<br>
+<br>
+<br>
 <br>
 <br>
 <label for="term"> Term: </label> 
@@ -359,10 +401,10 @@ table.schedule-table {
 	</li>
 		<ul class="secondary-list">
 			<li onclick="handleListClick.call(this)"> 
-			<img src="images/chevron.png" class="image"/>
-			<img src="images/chevronleft.png" class="image-left"/>
-			COMP 1xxx </li>
-				
+				<img src="images/chevron.png" class="image-inner"/>
+				<img src="images/chevronleft.png" class="image-left-inner"/>
+				COMP 1xxx </li>
+					
 				<ul class="third-list" >
 					<li> <data value="10418"> COMP 1020 <input id="checkBox" type="checkbox">
 					<br> Introduction to Spreadsheets 
@@ -394,9 +436,9 @@ table.schedule-table {
 					
 				</ul>
 			<li onclick="handleListClick.call(this)"> 
-			<img src="images/chevron.png" class="image"/>
-			<img src="images/chevronleft.png" class="image-left"/>
-			COMP 2xxx </li>
+				<img src="images/chevron.png" class="image-inner"/>
+				<img src="images/chevronleft.png" class="image-left-inner"/>
+				COMP 2xxx </li>
 			
 			<ul class="third-list" >
 					<li> <data value="10447">  COMP 2130 <input id="checkBox" type="checkbox">
@@ -430,8 +472,8 @@ table.schedule-table {
 					
 				</ul>
 			<li onclick="handleListClick.call(this)"> 
-				<img src="images/chevron.png" class="image"/>
-				<img src="images/chevronleft.png" class="image-left"/>
+				<img src="images/chevron.png" class="image-inner"/>
+				<img src="images/chevronleft.png" class="image-left-inner"/>
 				COMP 3xxx </li>
 			
 			<ul class="third-list">
@@ -468,8 +510,8 @@ table.schedule-table {
 			
 			
 			<li onclick="handleListClick.call(this)">
-				<img src="images/chevron.png" class="image"/>
-				<img src="images/chevronleft.png" class="image-left"/>
+				<img src="images/chevron.png" class="image-inner"/>
+				<img src="images/chevronleft.png" class="image-left-inner"/>
 				COMP 4xxx </li>
 				<ul class="third-list">
 					<li> <data value="20410">  COMP 4530 <input id="checkBox" type="checkbox">
@@ -505,8 +547,8 @@ table.schedule-table {
 		MATH - Mathematics </li>
 	<ul class="secondary-list">
 			<li onclick="handleListClick.call(this)">
-				<img src="images/chevron.png" class="image"/>
-				<img src="images/chevronleft.png" class="image-left"/>
+				<img src="images/chevron.png" class="image-inner"/>
+				<img src="images/chevronleft.png" class="image-left-inner"/>
 				MATH 1xxx </li>
 				<ul class="third-list" >
 					<li> <data value="10898"> MATH 1000 <input id="checkBox" type="checkbox">
@@ -534,8 +576,8 @@ table.schedule-table {
 					
 				</ul>
 			<li onclick="handleListClick.call(this)">
-				<img src="images/chevron.png" class="image"/>
-				<img src="images/chevronleft.png" class="image-left"/>
+				<img src="images/chevron.png" class="image-inner"/>
+				<img src="images/chevronleft.png" class="image-left-inner"/>
 				MATH 2xxx </li>
 			
 			<ul class="third-list" >
@@ -565,8 +607,8 @@ table.schedule-table {
 					
 				</ul>
 			<li onclick="handleListClick.call(this)">
-				<img src="images/chevron.png" class="image"/>
-				<img src="images/chevronleft.png" class="image-left"/>
+				<img src="images/chevron.png" class="image-inner"/>
+				<img src="images/chevronleft.png" class="image-left-inner"/>
 				MATH 3xxx </li>
 			
 			<ul class="third-list">
@@ -596,9 +638,9 @@ table.schedule-table {
 			
 			
 			<li onclick="handleListClick.call(this)"> 
-			<img src="images/chevron.png" class="image"/>
-			<img src="images/chevronleft.png" class="image-left"/>
-			MATH 4xxx </li>
+				<img src="images/chevron.png" class="image-inner"/>
+				<img src="images/chevronleft.png" class="image-left-inner"/>
+				MATH 4xxx </li>
 				<ul class="third-list">
 					<li> <data value="21987">  MATH 4990 <input id="checkBox" type="checkbox">
 					<br> ST: Applied Math
