@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
-	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> </link>
+
 
 </head>
 
@@ -122,6 +122,24 @@ $(document).ready(() => {
 
 #checkBox{
 	float: right;
+	margin-right: 10px;
+	/* margin-bottom: 40px;  ?????? */ 
+}
+
+.image{
+	display:none;
+	width:15px; 
+	height:15px;
+
+
+}
+
+.image-left{
+	
+	width:15px; 
+	height:15px;
+
+
 }
 
 .secondary-list{
@@ -315,12 +333,16 @@ Filter Dialog
 
 <ul class="list-group primary-list">
     <li class="list-group-item" onclick="handleListClick.call(this)">
-		<img src="images/chevron.png" class="image" style="width:15px; height:15px" />
-		<img src="images/chevronleft.png" class="image" style="width:15px; height:15px" />
+		<img src="images/chevron.png" class="image"/>
+		<img src="images/chevronleft.png" class="image-left"/>
 		COMP - Computing Science
 	</li>
 		<ul class="secondary-list">
-			<li onclick="handleListClick.call(this)"> COMP 1xxx </li>
+			<li onclick="handleListClick.call(this)"> 
+			<img src="images/chevron.png" class="image"/>
+			<img src="images/chevronleft.png" class="image-left"/>
+			COMP 1xxx </li>
+				
 				<ul class="third-list" >
 					<li> <data value="10418"> COMP 1020 <br> Introduction to Spreadsheets 
 					
@@ -348,7 +370,9 @@ Filter Dialog
 					
 				</ul>
 			<li onclick="handleListClick.call(this)"> 
-			</i>COMP 2xxx </li>
+			<img src="images/chevron.png" class="image"/>
+			<img src="images/chevronleft.png" class="image-left"/>
+			COMP 2xxx </li>
 			
 			<ul class="third-list" >
 					<li> <data value="10447">  COMP 2130 <br> Introduction to Computer Systems
@@ -377,7 +401,10 @@ Filter Dialog
 					
 					
 				</ul>
-			<li onclick="handleListClick.call(this)"> COMP 3xxx </li>
+			<li onclick="handleListClick.call(this)"> 
+				<img src="images/chevron.png" class="image"/>
+				<img src="images/chevronleft.png" class="image-left"/>
+				COMP 3xxx </li>
 			
 			<ul class="third-list">
 					<li> <data value="20398">  COMP 3160 <br> Mobile Application Development 2
@@ -408,7 +435,10 @@ Filter Dialog
 				</ul>
 			
 			
-			<li onclick="handleListClick.call(this)"> COMP 4xxx </li>
+			<li onclick="handleListClick.call(this)">
+				<img src="images/chevron.png" class="image"/>
+				<img src="images/chevronleft.png" class="image-left"/>
+				COMP 4xxx </li>
 				<ul class="third-list">
 					<li> <data value="20410">  COMP 4530 <br> Advanced Software Engineering
 					
@@ -434,9 +464,15 @@ Filter Dialog
 			
 		</ul>
 			
-    <li class="list-group-item" onclick="handleListClick.call(this)"> MATH - Mathematics </li>
+    <li class="list-group-item" onclick="handleListClick.call(this)"> 
+		<img src="images/chevron.png" class="image"/>
+		<img src="images/chevronleft.png" class="image-left"/>
+		MATH - Mathematics </li>
 	<ul class="secondary-list">
-			<li onclick="handleListClick.call(this)"> MATH 1xxx </li>
+			<li onclick="handleListClick.call(this)">
+				<img src="images/chevron.png" class="image"/>
+				<img src="images/chevronleft.png" class="image-left"/>
+				MATH 1xxx </li>
 				<ul class="third-list" >
 					<li> <data value="10898"> MATH 1000 <br> Pre-Calculus
 					
@@ -459,7 +495,10 @@ Filter Dialog
 
 					
 				</ul>
-			<li onclick="handleListClick.call(this)"> MATH 2xxx </li>
+			<li onclick="handleListClick.call(this)">
+				<img src="images/chevron.png" class="image"/>
+				<img src="images/chevronleft.png" class="image-left"/>
+				MATH 2xxx </li>
 			
 			<ul class="third-list" >
 					<li> <data value="10958">   MATH 2110 <br> Calculus 3
@@ -484,7 +523,10 @@ Filter Dialog
 					
 					
 				</ul>
-			<li onclick="handleListClick.call(this)"> MATH 3xxx </li>
+			<li onclick="handleListClick.call(this)">
+				<img src="images/chevron.png" class="image"/>
+				<img src="images/chevronleft.png" class="image-left"/>
+				MATH 3xxx </li>
 			
 			<ul class="third-list">
 					<li> <data value="20927">  MATH 3030 <br> Introduction to Stochastic Processes 
@@ -511,7 +553,10 @@ Filter Dialog
 				</ul>
 			
 			
-			<li onclick="handleListClick.call(this)"> MATH 4xxx </li>
+			<li onclick="handleListClick.call(this)"> 
+			<img src="images/chevron.png" class="image"/>
+			<img src="images/chevronleft.png" class="image-left"/>
+			MATH 4xxx </li>
 				<ul class="third-list">
 					<li> <data value="21987">  MATH 4990 <br> ST: Applied Math
 					
@@ -524,7 +569,7 @@ Filter Dialog
 				</ul>
 			
 		</ul>
-    <li class="list-group-item">Third item</li>
+    <!-- <li class="list-group-item">Third item</li> !-->
   </ul>
 
 </div>
@@ -767,6 +812,7 @@ Filter Dialog
 
 function handleListClick() {
 	$(this).next().toggle();
+	$(this).children().toggle();
 	
 }
 
