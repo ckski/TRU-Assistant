@@ -194,7 +194,7 @@
         return year+semester;
     }
 
-	$.getJSON('https://yourtru.ca/2017/classes.json', function(data) {
+	$.getJSON('classes.json', function(data) {
 	Classjson = data;
 	NewClassJson = {};
 	for (var classes in Classjson){
@@ -203,8 +203,7 @@
         title = Classjson[classes]['Title'];
         daysList = Classjson[classes]['Days'];
         fullType = Classjson[classes]['Type'];
-        dates = Classjson[classes]['Dates']
-        //startTime = 
+        dates = Classjson[classes]['Dates'];
 
     	if(totalTime.split('-')[0] == undefined || totalTime.split('-')[1] == undefined) continue;//dont do anything for tba
 
@@ -223,7 +222,7 @@
         var timecode = getTimeCode(dates);
 
         //console.log(timecode);
-        //if(!isNaN(parseInt(id))) console.log(Classjson[classes]); //old error checking
+        //if(!isNaN(parseInt(id))) console.log(Classjson[classes]); //old error checking 
 
         NewClassJson[crn] = {
             'ID':id,
