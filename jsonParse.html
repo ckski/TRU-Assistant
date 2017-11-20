@@ -1,15 +1,45 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
 <script type="text/javascript">
+
+    function parseTimes(timeList){
+
+        var atime = totalTime.split('-')[0].replace(/\s+/g, "").replace("am","");
+        var btime = totalTime.split('-')[1].replace(/\s+/g, "").replace("am","");
+
+        var atimeInt;
+        var btimeInt; 
+
+        var aDate = new Date()
+        var bDate = new Date()
+
+        var ahours = parseInt(atime.split(":")[0]) 
+        var aminutes = parseInt(atime.split(":")[1]);
+
+        if(atime.indexOf("pm") > -1){
+            var ahours += 12;
+        }
+        //console.log(atimeInt);
+        //console.log(btimeInt);
+        //console.log(btime +""+ atime); //duration in hrs:min
+        if(isNaN(btimeInt - atimeInt)){
+            console.log(atime)
+            console.log(btime)
+        }
+        http://momentjs.com/downloads/moment-with-locales.js
+        return btimeInt - atimeInt;
+    }
 	$.getJSON('https://yourtru.ca/2017/classes.json', function(data) {
-	Classjson = data
-	NewClassJson = {}
+	Classjson = data;
+	NewClassJson = {};
 	for (var classes in Classjson){
-    	totalTime = Classjson[classes]['Times']
-    	atime = totalTime.split('-')[0]
-    	btime = totalTime.split('-')[1]
-    	console.log(atime)
-    	console.log(btime)
+    	totalTime = Classjson[classes]['Times'];
+    	if(totalTime.split('-')[0] == undefined || totalTime.split('-')[1] == undefined) continue;
+        var dur = parseTimes(totalTime.split('-'))
+        if(isNaN(dur)){
+            console.log(Classjson[classes])
+        }
 	}
 });
 </script>
