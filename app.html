@@ -64,8 +64,7 @@ function CourseItem(data, parent) {
 // TODO: add colors
 	//Cyan, yellow, light green, pink, orange, purple, greenish, green, red, blue, off-yellow, purpleish, green, brown, blue-grey,
 const COLORS = ['#00FFFF', '#FFFF00', '#99ff33', '#ff3399', '#f88f23', '#df80ff', '#00ffcc', '#00b18f', '#ff0000', '#0000cc', '#ffffcc',
-	       '#666699', '#00cc66', '#996633', '#669999'];
-var unassigned_colors = [1, 0];  
+var unassigned_colors = [5, 4, 3, 2, 1, 0];
 
 CourseItem.prototype.getColor = function() {
 	return COLORS[this.colorIndex];
@@ -80,6 +79,7 @@ CourseItem.prototype.setWidth = function(width) {
 };
 
 CourseItem.prototype.setXPosition = function(xPos) {
+	// console.log('updated xPosition to', xPos);
 	this.xPosition = xPos;
 	// TODO: update dom element with new xposition.
 	if (this.blockDom) {
@@ -217,6 +217,27 @@ function doBlockLayout(blocks) {
 			} else {
 				return [slots[1], slots[0]].concat(new_slots);
 			}
+	function updateItemWidths(slots) {
+		var w = 1;
+		for (var i = 0; i < slots.length; i++) {
+			if (slots[i] === null) {
+				continue;
+			}
+			if (slots[i] == slots[i+1]) {
+				w += 1;
+			} else {
+				slots[i].setWidth(w);
+				w = 1;
+			}
+		}
+	}
+
+						// updateItemXPositions(slots);
+						// updateItemWidths(slots);
+						// slots[i].setWidth(slots[i].width+1);
+
+			updateItemXPositions(slots);
+			updateItemWidths(slots);
 		}
 	}
 
@@ -232,10 +253,12 @@ function doBlockLayout(blocks) {
 		// Add each positioned item.
 		for (var i in items) {
 			var item = items[i];
-			if (item.xPosition >= 0) {  // If already positioned.
+			if (item.start != block.time) {  // If starts in previous block.
 				for (var j = 0; j < item.width; j++) {
 					slots[item.xPosition + j] = item;
 				}
+			} else {
+				item.xPosition = -1;	// Else reset the xPosition.
 			}
 		}
 
@@ -275,7 +298,7 @@ function doBlockLayout(blocks) {
 				// We have an available slot.
 				slots[next_available_slot] = item;
 				// console.log("positioning", item, "at", next_available_slot);
-				item.setXPosition(next_available_slot);
+						// item.setXPosition(next_available_slot);
 				item.setWidth(item.width);
 			}
 		}
@@ -304,13 +327,17 @@ function doBlockLayout(blocks) {
 						new_slots = slots.slice(0, i).concat([slots[i]].concat(new_slots))
 						slots = new_slots;
 						slots[i].setWidth(slots[i].width+1);
+				// item.setXPosition(next_available_slot);
 						
 						console.log('new slots', new_slots);
 					}
 				}
 			}
 
-			break;
+		updateItemXPositions(slots);
+
+		console.log('FInal slot state:', slots);
+
 		}
 
 
@@ -325,17 +352,23 @@ $(document).ready(() => {
 		title: 'Course title',
 		courseNumber: 'COMP333',
 		// times: [{start: '0930', day: 1, duration: 30, type: 'L'}, {start: '0930', day: 3, duration: 50, type: 'L'}]
-		times: [{start: '0930', day: 1, duration: 30, type: 'L'}]
+		times: [{start: '0930', day: 1, duration: 80, type: 'L'}]
 	};
 
 	var comp777 = {
 		title: 'Course title',
 		courseNumber: 'COMP777',
-		times: [{start: '0930', day: 1, duration: 30, type: 'L'}]
+		times: [{start: '0930', day: 1, duration: 50, type: 'L'}]
 	};
 
+	};
+	var comp999 = {
+		title: 'Course title',
+		courseNumber: 'COMP999',
+		times: [{start: '0930', day: 2, duration: 90, type: 'L'}]
 	addCourseToTable(comp333);
 	addCourseToTable(comp777);
+	addCourseToTable(comp999);
 
 });
 
