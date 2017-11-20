@@ -14,6 +14,23 @@
 
 </head>
 
+
+<script>
+
+$(document).ready(() => {
+
+	// Load data.
+
+
+
+});
+
+</script>
+
+
+
+
+
 <style>
 /* Banner styling */
 
@@ -114,6 +131,10 @@ table.schedule-table {
 .schedule-table tr > th:nth-child(1) {
 	width: 70px;
 }
+.schedule-table tr > th:nth-child(n+2) {
+	width: 240px;  /* Width of the columns for each day */
+}
+
 
 .schedule-table .day-header {
 	color: blue;
@@ -129,20 +150,59 @@ table.schedule-table {
 	color: red;
 }
 
+.schedule-table tr.half > *:nth-child(1) > span.time-30-text {
+	display: none;
+}
 
+
+
+/* Styling for the columns after 1st */
+.schedule-table tr > *:nth-child(n+2) {
+	border-left: #bdbdbd 2px solid; 
+}
 
 .schedule-table td.course-item {
 	padding: 0;
-	position: absolute;
-	margin-top: -1px;
-	border: 0;
+	/*position: absolute;*/
+	/*margin-top: -1px;*/
+	/*border: 0;*/
 }
 
-.schedule-table td.course-item > div {
+.schedule-table td.course-item > .course-item-blocks {
+	position: absolute;
+}
+
+.schedule-table td.course-item .course-item-block {
 	display: inline-block;
-	background-color: green;
+	background-color: cyan;
 	height: 50px;
 	width: 50px;
+	border: #757575 1px solid;
+	border-left: none;
+}
+
+.schedule-table td.course-item > .course-item-blocks > div:nth-child(n+2) {
+	margin-left: -4px;
+}
+
+.schedule-table td.course-item > .course-item-blocks > div:first-child {
+	/*display: inline-block;
+	background-color: cyan;
+	height: 48px;
+	width: 48px;*/
+	border: #757575 1px solid;
+}
+
+.schedule-table div.course-item-text {
+	display: block;
+	width: 200px;
+	color: magenta;
+	position: absolute;
+	font-size: 16px;
+	font-weight: 600;
+	text-shadow: 0px 0px 5px black, 1px 1px 1px black, -1px -1px 1px black, 0px 1px 1px black, 1px 0px 1px black;
+	text-align: center;
+	letter-spacing: 1px;
 }
 
 /* For styling nth column */
@@ -218,24 +278,39 @@ Filter Dialog
 	  </tr>
 	</thead>
 	<tbody>
-	  <tr>
-	    <td>8:30</td>
-	    <td class='course-item'><div class='schedule-course-item'></div></td>
+	  <tr class='8'>
+	    <td><span class='time-00-text'>8:00AM</span></td>
+	    <td class='course-item'>
+	    	<div class='course-item-blocks'>
+	    		<div class='course-item-block'></div>
+	    		<div class='course-item-block'></div>
+	    	</div>
+	    	<div class='course-item-text'>COMP3450</div>
+	    </td>
 	    <td></td>
 	    <td></td>
 	    <td></td>
 	    <td></td>
 	  </tr>
-	  <tr>
-	    <td>9:30</td>
+	  <tr class='8.5 half'>
+	    <td><span class='time-30-text'>8:30AM</span></td>
+	    <td class='course-item'>
+	    </td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	  </tr>
+	  <tr class='9'>
+	    <td>9:00AM</td>
 	    <td></td>
 	    <td></td>
 	    <td></td>
 	    <td></td>
 	    <td></td>
 	  </tr>
-	  <tr>
-	    <td>10:30</td>
+	  <tr class='9.5 half'>
+	    <td><span class='time-30-text'>9:30AM</span></td>
 	    <td></td>
 	    <td></td>
 	    <td></td>
