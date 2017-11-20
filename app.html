@@ -17,8 +17,71 @@
 <style>
 /* Banner styling */
 
+.container{
+	
+	color: black;
+	/* text-align:center; */
+
+	/* border: 2px solid  #125ed1; */
+	
+
+}
+
+.list-group {
+	
+
+
+
+
+}
+
+.filter{
+
+	height: 95%;
+
+}
+.primary-list{
+	
+
+
+
+}
+
+.secondary-list{
+
+	list-style-type: none;
+
+
+}
+
+.third-list {
+
+	list-style-type: none;
+
+
+}
+
+.third-list > li{
+	
+	border: solid black 1px;
+	border-bottom: none;
+	display:block;
+	width: 40%;
+
+}
+
+.third-list > li:last-child{
+	border-bottom: solid black 1px;
+
+}
+
 .banner-bar {
-	background-color: #f5f5f5;
+	background-color: #e0e2e5;
+	color: #125ed1;
+	text-align:center;
+	border-radius: 25px;
+	border: 2px solid  #125ed1;
+	
 
 /*
 grey100 #f5f5f5
@@ -96,14 +159,52 @@ table.schedule-table {
 <h1>TRU Assistant</h1>
 </div>
 
-<div class='container'>
+<div class='container filter'>
 <!-- Dynamic filter dialog is here -->
 Filter Dialog
-</div>
+<br>
+<br>
+<label for="term"> Term: </label> 
+<select name="term"> 
+	<option value="Fall 2017"> Fall 2017 </option>
+	<option value="Winter 2018"> Winter 2018 </option>
+</select>
+
 
 <div class='container'>
+
+<ul class="list-group primary-list">
+    <li class="list-group-item">COMP - Computing Science</li>
+		<ul class="secondary-list">
+			<li> COMP 1xxxx </li>
+				<ul class="third-list">
+					<li> COMP 1020 <br> Introduction to Spreadsheets 
+					<input id="checkBox" type="checkbox">
+					</li>
+					
+					<li> COMP 1030 <br> Introduction to Databases 
+					<input id="checkBox" type="checkbox">
+					</li>
+					
+					<li> COMP 1050 <br> Computer System Maintenance 
+					<input id="checkBox" type="checkbox">
+					</li>
+					
+				</ul>
+			<li> COMP 2xxxx </li>
+			<li> COMP 3xxxx </li>
+			<li> COMP 4xxxx </li>
+		</ul>
+			
+    <li class="list-group-item">Second item</li>
+    <li class="list-group-item">Third item</li>
+  </ul>
+
+</div>
+</div>
+<div class='container'>
 <!-- Schedule visualization goes here -->
-Schedule
+<h2 style="text-align:center"> Schedule </h2>
 
 <table class="table schedule-table">
 	<thead>
