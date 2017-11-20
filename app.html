@@ -234,26 +234,66 @@ Filter Dialog
 <div class='container'>
 
 <ul class="list-group primary-list">
-    <li class="list-group-item">COMP - Computing Science</li>
+    <li class="list-group-item" onclick="handleListClick.call(this)">COMP - Computing Science</li>
 		<ul class="secondary-list">
-			<li> COMP 1xxxx </li>
+			<li onclick="handleListClick.call(this)"> COMP 1xxxx </li>
 				<ul class="third-list">
-					<li> COMP 1020 <br> Introduction to Spreadsheets 
-					<input id="checkBox" type="checkbox">
-					</li>
+					<li> <data value="10418"> COMP 1020 <br> Introduction to Spreadsheets 
 					
-					<li> COMP 1030 <br> Introduction to Databases 
 					<input id="checkBox" type="checkbox">
-					</li>
+					</data></li>
 					
-					<li> COMP 1050 <br> Computer System Maintenance 
+					
+					
+					<li> <data value="10420"> COMP 1030 <br> Introduction to Databases 
 					<input id="checkBox" type="checkbox">
-					</li>
+					</data></li>
+					
+					
+					<li> <data value="10421"> COMP 1050 <br> Computer System Maintenance 
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="10423"> COMP 1070 <br> Introduction to Digital Media
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
 					
 				</ul>
-			<li> COMP 2xxxx </li>
-			<li> COMP 3xxxx </li>
-			<li> COMP 4xxxx </li>
+			<li onclick="handleListClick.call(this)"> COMP 2xxxx </li>
+			
+			<ul class="third-list">
+					<li> <data value="10447">  COMP 2130 <br> Introduction to Computer Systems
+					
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+				
+					
+					<li> <data value="10453"> COMP 2210 <br> Programming Methods 
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="10457"> COMP 2680 <br> Web Site Design and Development 
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="10423"> COMP 1070 <br> Introduction to Digital Media
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+				</ul>
+			<li onclick="handleListClick.call(this)"> COMP 3xxxx </li>
+			<li onclick="handleListClick.call(this)"> COMP 4xxxx </li>
 		</ul>
 			
     <li class="list-group-item">Second item</li>
@@ -326,3 +366,13 @@ Filter Dialog
 </body>
 
 </html>
+
+
+
+<script>
+
+function handleListClick() {
+	$(this).next().toggle();
+}
+
+</script> 
