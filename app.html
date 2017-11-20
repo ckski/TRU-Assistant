@@ -105,12 +105,44 @@ $(document).ready(() => {
 
 }
 
-.filter{
 
-	height: 95%;
+
+
+
+
+.banner-bar {
+	background-color: #e0e2e5;
+	color: #125ed1;
+	text-align:center;
+	border-radius: 25px;
+	border: 2px solid  #125ed1;
+	
+
+/*
+grey100 #f5f5f5
+grey200 #eeeeee
+grey300 #e0e0e0
+grey400 #bdbdbd
+grey500 #9e9e9e
+grey600 #757575
+grey700 #616161
+*/
 
 }
 
+
+
+
+</style>
+
+<style>
+/* Filter dialog styling */
+
+
+.filter{
+
+
+}
 
 
 .primary-list{
@@ -123,6 +155,7 @@ $(document).ready(() => {
 #checkBox{
 	float: right;
 	margin-right: 10px;
+	margin-top: 15px;
 	/* margin-bottom: 40px;  ?????? */ 
 }
 
@@ -172,26 +205,6 @@ $(document).ready(() => {
 
 }
 
-.banner-bar {
-	background-color: #e0e2e5;
-	color: #125ed1;
-	text-align:center;
-	border-radius: 25px;
-	border: 2px solid  #125ed1;
-	
-
-/*
-grey100 #f5f5f5
-grey200 #eeeeee
-grey300 #e0e0e0
-grey400 #bdbdbd
-grey500 #9e9e9e
-grey600 #757575
-grey700 #616161
-*/
-
-}
-
 
 li:hover {
 	
@@ -206,11 +219,15 @@ li:hover {
 
 
 }
-</style>
 
-<style>
-/* Filter dialog styling */
+.schedule-box{
+	background-color: #e0e2e5;
+	color: #125ed1;
+	text-align:center;
+	border-radius: 25px;
+	border: 2px solid  #125ed1;
 
+}
 
 </style>
 
@@ -219,7 +236,10 @@ li:hover {
 
 
 table.schedule-table {
-
+	
+	background-color: white;
+	border: 1px solid #125ed1;
+	
 }
 
 /* Styling for table headers */
@@ -312,14 +332,14 @@ table.schedule-table {
 
 
 <body>
-<div class='container banner-bar'>
+<div class='banner-bar'>
 <!-- Banner goes here -->
 <h1>TRU Assistant</h1>
 </div>
 
 <div class='container filter'>
 <!-- Dynamic filter dialog is here -->
-Filter Dialog
+
 <br>
 <br>
 <label for="term"> Term: </label> 
@@ -328,7 +348,7 @@ Filter Dialog
 	<option value="Winter 2018"> Winter 2018 </option>
 </select>
 
-
+<br/><br/>
 <div class='container'>
 
 <ul class="list-group primary-list">
@@ -344,26 +364,30 @@ Filter Dialog
 			COMP 1xxx </li>
 				
 				<ul class="third-list" >
-					<li> <data value="10418"> COMP 1020 <br> Introduction to Spreadsheets 
+					<li> <data value="10418"> COMP 1020 <input id="checkBox" type="checkbox">
+					<br> Introduction to Spreadsheets 
 					
-					<input id="checkBox" type="checkbox">
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="10420"> COMP 1030 <br> Introduction to Databases 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10420"> COMP 1030 <input id="checkBox" type="checkbox">
+					<br> Introduction to Databases 
+					
 					</data></li>
 					
 					
-					<li> <data value="10421"> COMP 1050 <br> Computer System Maintenance 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10421"> COMP 1050 <input id="checkBox" type="checkbox">
+					<br> Computer System Maintenance 
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="10423"> COMP 1070 <br> Introduction to Digital Media
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10423"> COMP 1070 <input id="checkBox" type="checkbox">
+					<br> Introduction to Digital Media
+					
 					</data></li>
 					
 					
@@ -375,27 +399,31 @@ Filter Dialog
 			COMP 2xxx </li>
 			
 			<ul class="third-list" >
-					<li> <data value="10447">  COMP 2130 <br> Introduction to Computer Systems
+					<li> <data value="10447">  COMP 2130 <input id="checkBox" type="checkbox">
+					<br> Introduction to Computer Systems
 					
-					<input id="checkBox" type="checkbox">
+					
 					</data></li>
 					
 				
 					
-					<li> <data value="10453"> COMP 2210 <br> Programming Methods 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10453"> COMP 2210 <input id="checkBox" type="checkbox">
+					<br> Programming Methods 
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="10457"> COMP 2680 <br> Web Site Design and Development 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10457"> COMP 2680 <input id="checkBox" type="checkbox">
+					<br> Web Site Design and Development 
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="10459"> COMP 2920 <br> Software Architecture and Design
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10459"> COMP 2920 <input id="checkBox" type="checkbox">
+					<br> Software Architecture and Design
+					
 					</data></li>
 					
 					
@@ -407,27 +435,31 @@ Filter Dialog
 				COMP 3xxx </li>
 			
 			<ul class="third-list">
-					<li> <data value="20398">  COMP 3160 <br> Mobile Application Development 2
+					<li> <data value="20398">  COMP 3160 <input id="checkBox" type="checkbox">
+					<br> Mobile Application Development 2
 					
-					<input id="checkBox" type="checkbox">
+					
 					</data></li>
 					
 				
 					
-					<li> <data value="20400"> COMP 3270 <br> Computer Networks 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="20400"> COMP 3270 <input id="checkBox" type="checkbox">
+					<br> Computer Networks 
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="20402"> COMP 3410 <br> Operating Systems 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="20402"> COMP 3410 <input id="checkBox" type="checkbox">
+					<br> Operating Systems 
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="20404"> COMP 3520 <br> Software Engineering
-					<input id="checkBox" type="checkbox">
+					<li> <data value="20404"> COMP 3520 <input id="checkBox" type="checkbox">
+					<br> Software Engineering
+					
 					</data></li>
 					
 					
@@ -440,21 +472,24 @@ Filter Dialog
 				<img src="images/chevronleft.png" class="image-left"/>
 				COMP 4xxx </li>
 				<ul class="third-list">
-					<li> <data value="20410">  COMP 4530 <br> Advanced Software Engineering
+					<li> <data value="20410">  COMP 4530 <input id="checkBox" type="checkbox">
+					<br> Advanced Software Engineering
 					
-					<input id="checkBox" type="checkbox">
+					
 					</data></li>
 					
 				
 					
-					<li> <data value="20423"> COMP 4980<br> ST: Software Testing
-					<input id="checkBox" type="checkbox">
+					<li> <data value="20423"> COMP 4980<input id="checkBox" type="checkbox">
+					<br> ST: Software Testing
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="21562"> COMP 4980<br> ST: Virtual Reality
-					<input id="checkBox" type="checkbox">
+					<li> <data value="21562"> COMP 4980<input id="checkBox" type="checkbox">
+					<br> ST: Virtual Reality
+					
 					</data></li>
 					
 					
@@ -474,20 +509,23 @@ Filter Dialog
 				<img src="images/chevronleft.png" class="image-left"/>
 				MATH 1xxx </li>
 				<ul class="third-list" >
-					<li> <data value="10898"> MATH 1000 <br> Pre-Calculus
+					<li> <data value="10898"> MATH 1000 <input id="checkBox" type="checkbox">
+					<br> Pre-Calculus
 					
-					<input id="checkBox" type="checkbox">
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="10901"> MATH 1070 <br> Fundamentals of Mathematics for Business and Economics
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10901"> MATH 1070 <input id="checkBox" type="checkbox">
+					<br> Fundamentals of Mathematics for Business and Economics
+					
 					</data></li>
 					
 					
-					<li> <data value="10916"> MATH 1100 <br> Finite Mathematics with Applications 1 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10916"> MATH 1100 <input id="checkBox" type="checkbox">
+					<br> Finite Mathematics with Applications 1 
+					
 					</data></li>
 					
 					
@@ -501,21 +539,24 @@ Filter Dialog
 				MATH 2xxx </li>
 			
 			<ul class="third-list" >
-					<li> <data value="10958">   MATH 2110 <br> Calculus 3
+					<li> <data value="10958">   MATH 2110 <input id="checkBox" type="checkbox">
+					<br> Calculus 3
 					
-					<input id="checkBox" type="checkbox">
+					
 					</data></li>
 					
 				
 					
-					<li> <data value="10960"> MATH 2120 <br> Linear Algebra 1 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="10960"> MATH 2120 <input id="checkBox" type="checkbox">
+					<br> Linear Algebra 1 
+					
 					</data></li>
 					
 					
 					
-					<li> <data value="20925"> MATH 2240 <br> Differential Equations 1  
-					<input id="checkBox" type="checkbox">
+					<li> <data value="20925"> MATH 2240 <input id="checkBox" type="checkbox">
+					<br> Differential Equations 1  
+					
 					</data></li>
 					
 		
@@ -529,21 +570,22 @@ Filter Dialog
 				MATH 3xxx </li>
 			
 			<ul class="third-list">
-					<li> <data value="20927">  MATH 3030 <br> Introduction to Stochastic Processes 
+					<li> <data value="20927">  MATH 3030 <input id="checkBox" type="checkbox">
+					<br> Introduction to Stochastic Processes 
 					
-					<input id="checkBox" type="checkbox">
+					
 					</data></li>
 					
 				
 					
-					<li> <data value="20929"> MATH 3170 <br> Calculus 4
-					<input id="checkBox" type="checkbox">
+					<li> <data value="20929"> MATH 3170 <input id="checkBox" type="checkbox">
+					<br> Calculus 4
 					</data></li>
 					
 					
 					
-					<li> <data value="20931"> MATH 3220 <br> Abstract Algebra 
-					<input id="checkBox" type="checkbox">
+					<li> <data value="20931"> MATH 3220 <input id="checkBox" type="checkbox">
+					<br> Abstract Algebra 
 					</data></li>
 					
 					
@@ -558,9 +600,10 @@ Filter Dialog
 			<img src="images/chevronleft.png" class="image-left"/>
 			MATH 4xxx </li>
 				<ul class="third-list">
-					<li> <data value="21987">  MATH 4990 <br> ST: Applied Math
+					<li> <data value="21987">  MATH 4990 <input id="checkBox" type="checkbox">
+					<br> ST: Applied Math
 					
-					<input id="checkBox" type="checkbox">
+					
 					</data></li>
 					
 				
@@ -574,9 +617,9 @@ Filter Dialog
 
 </div>
 </div>
-<div class='container'>
+<div class='container schedule-box'>
 <!-- Schedule visualization goes here -->
-<h2 style="text-align:center"> Schedule </h2>
+<h1 style="text-align:center"> Schedule </h1>
 
 <table class="table schedule-table">
 	<thead>
