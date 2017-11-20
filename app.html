@@ -24,7 +24,7 @@
 <script>
 
 const ROW_HEIGHT = 50;
-const COLUMN_WIDTH = 211;
+const COLUMN_WIDTH = 212;
 const SLOT_WIDTH = COLUMN_WIDTH / 12;  // 12 slots
 
 var scheduleVizTable = [{}, {}, {}, {}, {}, {}, {}];
@@ -79,6 +79,7 @@ CourseItem.prototype.setWidth = function(width) {
 };
 
 CourseItem.prototype.setXPosition = function(xPos) {
+	console.log('updated xPosition to', xPos);
 	this.xPosition = xPos;
 	// TODO: update dom element with new xposition.
 	if (this.blockDom) {
@@ -128,6 +129,7 @@ function timeStringAddMinutes(time, m) {
 }
 
 function addCourseToTable(course_offering) {
+	// course_offering must not be undefined
 
 	// var $cell = getCellByDayTime(1, '0830');
 	var parent = course_offering;  // parent is course_offering
@@ -191,6 +193,19 @@ function doBlockLayout(blocks) {
 		}
 	}
 
+	function allSlotsUnique(slots) {
+		// Returns true if all slots hold different items. Else false.
+		var prev = {};
+		for (var i = 1; i < slots.length; i++) {
+			if (prev[slots[i].parent] === undefined) {
+				prev[slots[i].parent] = true;
+			} else {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	function tryPushItemOver(slots, blockStart) {
 		// Base cases
 		if (slots.length < 2) {
@@ -210,14 +225,66 @@ function doBlockLayout(blocks) {
 			}
 		} else {
 			// Next slot cannot be shifted over. So skip over it
-			new_slots = tryPushItemOver(slots.slice(2), blockStart);
-			if (!new_slots) {
-				return false;
+
+			// If the item being shifted has width 1, only then can it jump over.
+			if (slots[0].width == 1) {
+				new_slots = tryPushItemOver(slots.slice(2), blockStart);
+				if (!new_slots) {
+					return false;
+				} else {
+					return [slots[1], slots[0]].concat(new_slots);
+				}
 			} else {
-				return [slots[1], slots[0]].concat(new_slots);
+				return false;
 			}
 		}
 	}
+
+	function updateItemXPositions(slots) {
+		for (var i = slots.length - 1; i >= 0; i--) {
+			if (slots[i] !== null) {
+				slots[i].setXPosition(i);
+			}
+		}
+	}
+
+	function doExpand(slots, initial_i, block) {
+		// Expansion step
+		var can_push = true;
+		while (can_push) {
+			for (var i = initial_i; i < slots.length; i++) {
+				if (slots[i] === null) {	// Skip empty slots.
+					continue;
+				}
+
+				// console.log(slots[i].start)
+
+				if (slots[i].start != block.time) {		// Ignore slots positioned earlier.
+					continue;
+				}
+
+				// Next slot is empty or is being positioned in this block.
+				if (slots[i+1] === null || (slots[i+1] && slots[i+1].start == block.time)) {
+					new_slots = tryPushItemOver(slots.slice(i), block.time);
+					if (!new_slots) {
+						can_push = false;
+						break;
+					} else {
+						new_slots = slots.slice(0, i).concat([slots[i]].concat(new_slots))
+						slots = new_slots;
+						updateItemXPositions(slots);
+						slots[i].setWidth(slots[i].width+1);
+						
+						console.log('new slots', new_slots);
+					}
+				}
+			}
+			break;
+		}
+	}
+
+
+
 
 	for (var b in blocks) {
 		var block = blocks[b];
@@ -248,27 +315,55 @@ function doBlockLayout(blocks) {
 			if (item.xPosition >= 0) {
 				continue;
 			}
+			console.log("Positioning item", item);
+
 			// For unpositioned blocks.
 			var next_available_slot = getFirstAvailableSlot(slots);
 			if (next_available_slot < 0) {
 				// Reduce last positioned item.
 				var last_positioned = getLastPositionedItem(slots, block);
 				if (last_positioned < 0) {
-					console.error('NOT ENOUGH SLOTS');
+					console.error('Not enough slots');
 				} else {
-					var last_positioned_block = slots[last_positioned];
-					var new_width = Math.floor(last_positioned_block.width / 2);
-					var delta_width = last_positioned_block.width - new_width;
-					last_positioned_block.setWidth(new_width);
 
-					console.log('freeing slots', slots, last_positioned_block, delta_width);
+					// Loop reducing existing positioned blocks.
+					// var can_reduce = true;
+					while (true) {
+						var last_positioned_block = slots[last_positioned];
+						var new_width = Math.floor(last_positioned_block.width / 2);
+						console.log('new width', new_width);
+						var delta_width = last_positioned_block.width - new_width;
+						last_positioned_block.setWidth(new_width);
 
-					// Free the slots.
-					for (var j = 0; j < delta_width; j++) {
-						slots[last_positioned - j] = null;
+						console.log('freeing slots', slots, last_positioned_block, delta_width);
+
+						// Free the slots.
+						for (var j = 0; j < delta_width; j++) {
+							slots[last_positioned - j] = null;
+						}
+						console.log('freed slots', slots);
+					
+						if (getFirstAvailableSlot(slots) >= 0) {
+							break;
+						}
+
+						if (allSlotsUnique(slots)) {
+							break;
+						}
 					}
 
-					console.log('freed slots', slots);
+					var next_available_slot = getFirstAvailableSlot(slots);
+					if (next_available_slot < 0) {
+						console.error('Not enough slots, all slots filled');
+					} else {
+						slots[next_available_slot] = item;
+						// console.log("positioning", item, "at", next_available_slot);
+						item.setXPosition(next_available_slot);
+						item.setWidth(item.width);
+
+						doExpand(slots, next_available_slot, block);
+					}
+
 				}
 			} else {
 				// We have an available slot.
@@ -276,44 +371,16 @@ function doBlockLayout(blocks) {
 				// console.log("positioning", item, "at", next_available_slot);
 				item.setXPosition(next_available_slot);
 				item.setWidth(item.width);
+
+				doExpand(slots, next_available_slot, block);
 			}
 		}
 
-		// Expansion step
-		var can_push = true;
-		while (can_push) {
-			for (var i = 0; i < slots.length; i++) {
-				if (slots[i] === null) {	// Skip empty slots.
-					continue;
-				}
-
-				// console.log(slots[i].start)
-
-				if (slots[i].start != block.time) {		// Ignore slots positioned earlier.
-					continue;
-				}
-
-				// Next slot is empty or is being positioned in this block.
-				if (slots[i+1] === null || (slots[i+1] && slots[i+1].start == block.time)) {
-					new_slots = tryPushItemOver(slots.slice(i), block.time);
-					if (!new_slots) {
-						can_push = false;
-						break;
-					} else {
-						new_slots = slots.slice(0, i).concat([slots[i]].concat(new_slots))
-						slots = new_slots;
-						slots[i].setWidth(slots[i].width+1);
-						
-						console.log('new slots', new_slots);
-					}
-				}
-			}
-
-			break;
-		}
-
+		// doExpand(slots, 0, block);
 
 	}
+
+	console.log('--------------------------- completed layout -------------');
 }
 
 
@@ -333,8 +400,15 @@ $(document).ready(() => {
 		times: [{start: '0930', day: 1, duration: 30, type: 'L'}]
 	};
 
+	var comp888 = {
+		title: 'Course title',
+		courseNumber: 'COMP888',
+		times: [{start: '0930', day: 1, duration: 30, type: 'L'}]
+	};
+
 	addCourseToTable(comp333);
 	addCourseToTable(comp777);
+	addCourseToTable(comp888);
 
 });
 
