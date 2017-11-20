@@ -115,9 +115,14 @@ $(document).ready(() => {
 
 }
 
+#checkBox{
+	float: right;
+}
+
 .secondary-list{
 
 	list-style-type: none;
+	display: none;
 
 
 }
@@ -125,6 +130,7 @@ $(document).ready(() => {
 .third-list {
 
 	list-style-type: none;
+	display: none;
 
 
 }
@@ -290,8 +296,8 @@ Filter Dialog
 <ul class="list-group primary-list">
     <li class="list-group-item" onclick="handleListClick.call(this)">COMP - Computing Science</li>
 		<ul class="secondary-list">
-			<li onclick="handleListClick.call(this)"> COMP 1xxxx </li>
-				<ul class="third-list">
+			<li onclick="handleListClick.call(this)"> COMP 1xxx </li>
+				<ul class="third-list" >
 					<li> <data value="10418"> COMP 1020 <br> Introduction to Spreadsheets 
 					
 					<input id="checkBox" type="checkbox">
@@ -317,9 +323,9 @@ Filter Dialog
 					
 					
 				</ul>
-			<li onclick="handleListClick.call(this)"> COMP 2xxxx </li>
+			<li onclick="handleListClick.call(this)"> COMP 2xxx </li>
 			
-			<ul class="third-list">
+			<ul class="third-list" >
 					<li> <data value="10447">  COMP 2130 <br> Introduction to Computer Systems
 					
 					<input id="checkBox" type="checkbox">
@@ -339,18 +345,160 @@ Filter Dialog
 					
 					
 					
-					<li> <data value="10423"> COMP 1070 <br> Introduction to Digital Media
+					<li> <data value="10459"> COMP 2920 <br> Software Architecture and Design
 					<input id="checkBox" type="checkbox">
 					</data></li>
 					
 					
 					
 				</ul>
-			<li onclick="handleListClick.call(this)"> COMP 3xxxx </li>
-			<li onclick="handleListClick.call(this)"> COMP 4xxxx </li>
+			<li onclick="handleListClick.call(this)"> COMP 3xxx </li>
+			
+			<ul class="third-list">
+					<li> <data value="20398">  COMP 3160 <br> Mobile Application Development 2
+					
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+				
+					
+					<li> <data value="20400"> COMP 3270 <br> Computer Networks 
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="20402"> COMP 3410 <br> Operating Systems 
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="20404"> COMP 3520 <br> Software Engineering
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+				</ul>
+			
+			
+			<li onclick="handleListClick.call(this)"> COMP 4xxx </li>
+				<ul class="third-list">
+					<li> <data value="20410">  COMP 4530 <br> Advanced Software Engineering
+					
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+				
+					
+					<li> <data value="20423"> COMP 4980<br> ST: Software Testing
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="21562"> COMP 4980<br> ST: Virtual Reality
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+			
+					
+				</ul>
+			
 		</ul>
 			
-    <li class="list-group-item">Second item</li>
+    <li class="list-group-item" onclick="handleListClick.call(this)"> MATH - Mathematics </li>
+	<ul class="secondary-list">
+			<li onclick="handleListClick.call(this)"> MATH 1xxx </li>
+				<ul class="third-list" >
+					<li> <data value="10898"> MATH 1000 <br> Pre-Calculus
+					
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="10901"> MATH 1070 <br> Fundamentals of Mathematics for Business and Economics
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					<li> <data value="10916"> MATH 1100 <br> Finite Mathematics with Applications 1 
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+
+					
+				</ul>
+			<li onclick="handleListClick.call(this)"> MATH 2xxx </li>
+			
+			<ul class="third-list" >
+					<li> <data value="10958">   MATH 2110 <br> Calculus 3
+					
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+				
+					
+					<li> <data value="10960"> MATH 2120 <br> Linear Algebra 1 
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="20925"> MATH 2240 <br> Differential Equations 1  
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+		
+					
+					
+					
+				</ul>
+			<li onclick="handleListClick.call(this)"> MATH 3xxx </li>
+			
+			<ul class="third-list">
+					<li> <data value="20927">  MATH 3030 <br> Introduction to Stochastic Processes 
+					
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+				
+					
+					<li> <data value="20929"> MATH 3170 <br> Calculus 4
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+					
+					<li> <data value="20931"> MATH 3220 <br> Abstract Algebra 
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+					
+		
+					
+					
+				</ul>
+			
+			
+			<li onclick="handleListClick.call(this)"> MATH 4xxx </li>
+				<ul class="third-list">
+					<li> <data value="21987">  MATH 4990 <br> ST: Applied Math
+					
+					<input id="checkBox" type="checkbox">
+					</data></li>
+					
+				
+		
+					
+				</ul>
+			
+		</ul>
     <li class="list-group-item">Third item</li>
   </ul>
 
