@@ -20,6 +20,587 @@
 
 </head>
 
+<script>
+
+var COURSE_DATA = {"10418": {
+    "ID": "COMP 1020 ",
+    "start": "1530",
+    "duration": 50,
+    "days": [
+      3
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10419": {
+    "ID": "COMP 1020 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      3
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10420": {
+    "ID": "COMP 1030 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      0
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10421": {
+    "ID": "COMP 1050 ",
+    "start": "1430",
+    "duration": 50,
+    "days": [
+      0
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10422": {
+    "ID": "COMP 1050 ",
+    "start": "1230",
+    "duration": 50,
+    "days": [
+      0
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10423": {
+    "ID": "COMP 1070 ",
+    "start": "1130",
+    "duration": 50,
+    "days": [
+      3
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10424": {
+    "ID": "COMP 1080 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10425": {
+    "ID": "COMP 1090 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      1
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10426": {
+    "ID": "COMP 1130 ",
+    "start": "0930",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10427": {
+    "ID": "COMP 1130 ",
+    "start": "1530",
+    "duration": 50,
+    "days": [
+      1,
+      3,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10428": {
+    "ID": "COMP 1130 ",
+    "start": "1230",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10430": {
+    "ID": "COMP 1130 ",
+    "start": "0830",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10431": {
+    "ID": "COMP 1130 ",
+    "start": "0930",
+    "duration": 50,
+    "days": [
+      1
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10432": {
+    "ID": "COMP 1130 ",
+    "start": "1830",
+    "duration": 50,
+    "days": [
+      1
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10434": {
+    "ID": "COMP 1130 ",
+    "start": "1530",
+    "duration": 50,
+    "days": [
+      1
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10435": {
+    "ID": "COMP 1130 ",
+    "start": "0830",
+    "duration": 50,
+    "days": [
+      1
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10436": {
+    "ID": "COMP 1130 ",
+    "start": "1730",
+    "duration": 50,
+    "days": [
+      1
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10438": {
+    "ID": "COMP 1230 ",
+    "start": "1130",
+    "duration": 50,
+    "days": [
+      0,
+      3,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10439": {
+    "ID": "COMP 1230 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      1
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10440": {
+    "ID": "COMP 1230 ",
+    "start": "1530",
+    "duration": 50,
+    "days": [
+      0
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10441": {
+    "ID": "COMP 1230 ",
+    "start": "0830",
+    "duration": 50,
+    "days": [
+      4
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10442": {
+    "ID": "COMP 1520 ",
+    "start": "1330",
+    "duration": 50,
+    "days": [
+      0,
+      2,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10443": {
+    "ID": "COMP 1520 ",
+    "start": "1430",
+    "duration": 110,
+    "days": [
+      2
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10444": {
+    "ID": "COMP 1520 ",
+    "start": "1230",
+    "duration": 110,
+    "days": [
+      1
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10445": {
+    "ID": "COMP 1810 ",
+    "start": "1430",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10446": {
+    "ID": "COMP 1810 ",
+    "start": "1430",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10447": {
+    "ID": "COMP 2130 ",
+    "start": "1630",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10448": {
+    "ID": "COMP 2130 ",
+    "start": "0830",
+    "duration": 50,
+    "days": [
+      0
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10453": {
+    "ID": "COMP 2210 ",
+    "start": "1330",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10454": {
+    "ID": "COMP 2210 ",
+    "start": "1330",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10457": {
+    "ID": "COMP 2680 ",
+    "start": "1630",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10458": {
+    "ID": "COMP 2680 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      4
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10459": {
+    "ID": "COMP 2920 ",
+    "start": "1330",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10460": {
+    "ID": "COMP 2920 ",
+    "start": "1330",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10465": {
+    "ID": "COMP 3270 ",
+    "start": "1630",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      3
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10466": {
+    "ID": "COMP 3270 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      4
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10467": {
+    "ID": "COMP 3410 ",
+    "start": "1430",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10468": {
+    "ID": "COMP 3410 ",
+    "start": "1430",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10471": {
+    "ID": "COMP 3520 ",
+    "start": "1530",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10472": {
+    "ID": "COMP 3520 ",
+    "start": "1530",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10473": {
+    "ID": "COMP 3540 ",
+    "start": "0830",
+    "duration": 50,
+    "days": [
+      0,
+      2,
+      3
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10474": {
+    "ID": "COMP 3540 ",
+    "start": "1130",
+    "duration": 50,
+    "days": [
+      4
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10475": {
+    "ID": "COMP 3610 ",
+    "start": "130",
+    "duration": 75,
+    "days": [
+      0,
+      2
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10476": {
+    "ID": "COMP 3610 ",
+    "start": "1630",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10477": {
+    "ID": "COMP 3710 ",
+    "start": "1130",
+    "duration": 75,
+    "days": [
+      1,
+      3
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10478": {
+    "ID": "COMP 3710 ",
+    "start": "0830",
+    "duration": 50,
+    "days": [
+      1
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10479": {
+    "ID": "COMP 4530 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      3
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10480": {
+    "ID": "COMP 4530 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10482": {
+    "ID": "COMP 4980 ",
+    "start": "0830",
+    "duration": 110,
+    "days": [
+      0
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10483": {
+    "ID": "COMP 4980 ",
+    "start": "0830",
+    "duration": 75,
+    "days": [
+      0,
+      2
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10484": {
+    "ID": "COMP 4980 ",
+    "start": "130",
+    "duration": 75,
+    "days": [
+      0,
+      2
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10485": {
+    "ID": "COMP 4980 ",
+    "start": "1130",
+    "duration": 50,
+    "days": [
+      0
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10486": {
+    "ID": "COMP 4980 ",
+    "start": "1130",
+    "duration": 50,
+    "days": [
+      0
+    ],
+    "type": "S",
+    "timecode": "201810"
+  },
+  "10487": {
+    "ID": "COMP 4980 ",
+    "start": "1130",
+    "duration": 50,
+    "days": [
+      2
+    ],
+    "type": "S",
+    "timecode": "201810"
+  }};
+
+
+</script>
+
+
 
 <script>
 
@@ -67,7 +648,12 @@ function CourseItem(data, parent) {
 	//Cyan, yellow, light green, pink, orange, purple, greenish, green, red, blue, off-yellow, purpleish, green, brown, blue-grey,
 const COLORS = ['#00FFFF', '#FFFF00', '#99ff33', '#ff3399', '#f88f23', '#df80ff', '#00ffcc', '#00b18f', '#ff0000', '#0000cc', '#ffffcc',
 	       '#666699', '#00cc66', '#996633', '#669999'];
-var unassigned_colors = [5, 4, 3, 2, 1, 0];
+var unassigned_colors = [];
+
+for (var i = COLORS.length-1; i >= 0; i--) {
+	unassigned_colors.push(i);
+}
+
 
 
 CourseItem.prototype.getColor = function() {
@@ -291,7 +877,7 @@ function doBlockLayout(blocks) {
 						// updateItemWidths(slots);
 						// slots[i].setWidth(slots[i].width+1);
 						
-						console.log('new slots', new_slots);
+						// console.log('new slots', new_slots);
 					}
 				}
 			}
@@ -306,8 +892,8 @@ function doBlockLayout(blocks) {
 		var block = blocks[b];
 		var items = scheduleVizTable[block.day][block.time];
 		
-		console.log('Doing layout for block', block);
-		console.log(items);
+		// console.log('Doing layout for block', block);
+		// console.log(items);
 
 		var slots = [];
 		for (var i = 0; i < NUMBER_OF_SLOTS; i++) {
@@ -326,82 +912,98 @@ function doBlockLayout(blocks) {
 			}
 		}
 
-		console.log("positioned items are", slots);
-
-		// TODO: sort the unpositioned blocks by (start, duration).
-
-		// Loop through each unpositioned item.
-		for (var i in items) {
-			var item = items[i];
-			if (item.xPosition >= 0) {
-				continue;
-			}
-			// For unpositioned blocks.
-			var next_available_slot = getFirstAvailableSlot(slots);
-			if (next_available_slot < 0) {
-				// Reduce last positioned item.
-				var last_positioned = getLastPositionedItem(slots, block);
-				if (last_positioned < 0) {
-					console.error('NOT ENOUGH SLOTS');
-				} else {
-					// console.log('freeing slots', slots, last_positioned_block, delta_width);
-					// Loop reducing existing positioned blocks.
-					// var can_reduce = true;
-					while (true) {
-						var last_positioned_block = slots[last_positioned];
-						var new_width = Math.floor(last_positioned_block.width / 2);
-						console.log('new width', new_width);
-						var delta_width = last_positioned_block.width - new_width;
-						last_positioned_block.setWidth(new_width);
-
-						console.log('freeing slots', slots, last_positioned_block, delta_width);
-
-						// Free the slots.
-						for (var j = 0; j < delta_width; j++) {
-							slots[last_positioned - j] = null;
-						}
-						console.log('freed slots', slots);
-					
-						if (getFirstAvailableSlot(slots) >= 0) {
-							break;
-						}
-
-						if (allSlotsUnique(slots)) {
-							break;
-						}
-					}
-
-					var next_available_slot = getFirstAvailableSlot(slots);
-					if (next_available_slot < 0) {
-						console.error('Not enough slots, all slots filled');
-					} else {
-						slots[next_available_slot] = item;
-						// console.log("positioning", item, "at", next_available_slot);
-						// item.setXPosition(next_available_slot);
-						updateItemXPositions(slots);
-						item.setWidth(item.width);
-						doExpand(slots, next_available_slot, block);
-					}
+		if (slots.every((s) => s === null)) {
+			var width = Math.floor(NUMBER_OF_SLOTS / items.length);
+			for (var i = 0; i < slots.length; i++) {
+				var j = Math.floor(i / width);
+				slots[i] = items[j];
+				if (items[j].xPosition < 0) {
+					items[j].xPosition = i;
 				}
-
-			} else {
-				// We have an available slot.
-				slots[next_available_slot] = item;
-				// console.log("positioning", item, "at", next_available_slot);
-				// item.setXPosition(next_available_slot);
-				updateItemXPositions(slots);
-				item.setWidth(item.width);
-				doExpand(slots, next_available_slot, block)
+				items[j].setWidth(width);
 			}
+		} else
+		{
+
+
+			// console.log("positioned items are", slots);
+
+			// TODO: sort the unpositioned blocks by (start, duration).
+
+			// Loop through each unpositioned item.
+			for (var i in items) {
+				var item = items[i];
+				if (item.xPosition >= 0) {
+					continue;
+				}
+				// For unpositioned blocks.
+				var next_available_slot = getFirstAvailableSlot(slots);
+				if (next_available_slot < 0) {
+					// Reduce last positioned item.
+					var last_positioned = getLastPositionedItem(slots, block);
+					if (last_positioned < 0) {
+						console.error('NOT ENOUGH SLOTS');
+					} else {
+						// console.log('freeing slots', slots, last_positioned_block, delta_width);
+						// Loop reducing existing positioned blocks.
+						// var can_reduce = true;
+						while (true) {
+							var last_positioned_block = slots[last_positioned];
+							var new_width = Math.floor(last_positioned_block.width / 2);
+							// console.log('new width', new_width);
+							var delta_width = last_positioned_block.width - new_width;
+							last_positioned_block.setWidth(new_width);
+
+							// console.log('freeing slots', slots, last_positioned_block, delta_width);
+
+							// Free the slots.
+							for (var j = 0; j < delta_width; j++) {
+								slots[last_positioned - j] = null;
+							}
+							// console.log('freed slots', slots);
+						
+							if (getFirstAvailableSlot(slots) >= 0) {
+								break;
+							}
+
+							if (allSlotsUnique(slots)) {
+								break;
+							}
+						}
+
+						var next_available_slot = getFirstAvailableSlot(slots);
+						if (next_available_slot < 0) {
+							console.error('Not enough slots, all slots filled');
+						} else {
+							slots[next_available_slot] = item;
+							// console.log("positioning", item, "at", next_available_slot);
+							// item.setXPosition(next_available_slot);
+							updateItemXPositions(slots);
+							item.setWidth(item.width);
+							doExpand(slots, next_available_slot, block);
+						}
+					}
+
+				} else {
+					// We have an available slot.
+					slots[next_available_slot] = item;
+					// console.log("positioning", item, "at", next_available_slot);
+					// item.setXPosition(next_available_slot);
+					updateItemXPositions(slots);
+					item.setWidth(item.width);
+					doExpand(slots, next_available_slot, block)
+				}
+			}
+
+			updateItemXPositions(slots);
+			// updateItemWidths(slots);
+			// doExpand(slots, 0, block)
+
+			// console.log('FInal slot state:', slots);
+
+			// doExpand(slots, 0, block);
 		}
-
-		updateItemXPositions(slots);
-		// updateItemWidths(slots);
-		// doExpand(slots, 0, block)
-
-		console.log('FInal slot state:', slots);
-
-		// doExpand(slots, 0, block);
+		
 	}
 }
 
@@ -440,13 +1042,62 @@ $(document).ready(() => {
 		times: [{start: '0930', day: 2, duration: 90, type: 'L'}]
 	};
 
-	addCourseToTable(comp333);
-	addCourseToTable(comp444);
-	addCourseToTable(comp777);
-	addCourseToTable(comp888);
-	addCourseToTable(comp999);
+	// var compTest = {
+	// 	courseNumber: "COMP1020",
+	// 	times: [{start: "1530", day: 3, duration: 50, type: "S"}],
+	// 	title: 'title'
+	// }
 
+	// addCourseToTable(comp333);
+	// addCourseToTable(comp444);
+	// addCourseToTable(comp777);
+	// addCourseToTable(comp888);
+	// addCourseToTable(comp999);
+	// addCourseToTable(compTest);
+
+	var crns_to_show = ['10458', '10459', '10460', '10465', '10466', '10467', '10468', '10471', '10472', '10473'];
+
+	for (var i = 0; i < crns_to_show.length; i++) {
+		var course_data = JsontoClass(crns_to_show[i]);
+		addCourseToTable(course_data);
+	}
+
+
+	// JsontoClass();
 });
+
+
+
+
+function JsontoClass(crn){
+	// Convert course_data json to internal format used for schedule table.
+
+	var classes = COURSE_DATA;
+
+	var ctitle = "Insert Class Title";
+	var ccourseNum = classes[crn]['ID'].replace(" ","");
+	var cduration = classes[crn]['duration'];
+	var cdays = classes[crn]['days'];
+	var cstart = classes[crn]['start'];
+	var ctype = classes[crn]['type'];
+	var ccrn = classes[crn];
+
+	var ctimes = [];
+
+	for(var day in cdays){
+		ctimes.push({'start':cstart,'day': cdays[day], 'duration': cduration, 'type': ctype});
+	}
+
+	var newclass = {
+		title:ctitle,
+		courseNumber: ccourseNum,
+		times:ctimes
+	}
+
+	// console.log(newclass);
+	// addCourseToTable(newclass);
+	return newclass;
+}
 
 </script>
 
@@ -680,7 +1331,7 @@ table.schedule-table {
 
 
 .schedule-table .day-header {
-	color: blue;
+	color: black;
 }
 
 /* Styling for body rows */
@@ -690,7 +1341,7 @@ table.schedule-table {
 
 /* Styling for the first column */
 .schedule-table tr > *:nth-child(1) {
-	color: red;
+	color: #616161;
 }
 
 .schedule-table tr > *:nth-child(1) > span.time-30-text {
