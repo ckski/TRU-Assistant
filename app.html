@@ -1232,7 +1232,7 @@ var COURSE_DATA = {"10418": {
 
 <script>
 
-const ROW_HEIGHT = 50;
+const ROW_HEIGHT = 36;
 const COLUMN_WIDTH = 211;
 const NUMBER_OF_SLOTS = 4;
 // const NUMBER_OF_SLOTS = 12;
@@ -1961,6 +1961,7 @@ li:hover {
 table.schedule-table {
 	background-color: white;
 	table-layout: fixed;
+	margin-bottom: 10px;
 }
 
 /* Styling for table headers */
@@ -1977,12 +1978,13 @@ table.schedule-table {
 
 /* Styling for body rows */
 .schedule-table tbody tr {
-	height: 50px;
+	height: 36px;					/* ROW_HEIGHT */
 }
 
 /* Styling for the first column */
 .schedule-table tr > *:nth-child(1) {
 	color: #616161;
+	padding: 0;
 }
 
 .schedule-table tr > *:nth-child(1) > span.time-30-text {
@@ -2036,7 +2038,7 @@ table.schedule-table {
 	display: block;
 	width: 200px;
 	color: magenta;
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 600;
 	text-shadow: 0px 0px 5px black, 1px 1px 1px black, -1px -1px 1px black, 0px 1px 1px black, 1px 0px 1px black;
 	text-align: center;
