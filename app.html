@@ -107,6 +107,23 @@ function addCourseItemToCell(course_item, $cell) {
 
 	$cell.children('.course-item-blocks').append($block);
 	$cell.children('.course-item-texts').append($text);
+
+	var $texts = $cell.children('.course-item-texts');
+
+	var num_texts = $texts.children().length;
+
+	if (num_texts == 3) {
+		// console.log($texts.children());
+		$($texts.children()[0]).css('float', 'left');
+		$($texts.children()[0]).css('width', '100px');
+		$($texts.children()[2]).insertBefore($($texts.children()[2]).prev());
+	} else if (num_texts > 3) {
+		$($texts.children()[0]).css('float', 'left');
+		$($texts.children()[0]).css('width', '100px');
+		// $($texts.children()[2]).insertBefore($($texts.children()[2]).prev());
+		$($texts.children()[2]).css('float', 'left');
+		$($texts.children()[2]).css('width', '100px');
+	}
 }
 
 
@@ -409,7 +426,7 @@ $(document).ready(() => {
 	var comp777 = {
 		title: 'Course title',
 		courseNumber: 'COMP777',
-		times: [{start: '0930', day: 1, duration: 50, type: 'L'}]
+		times: [{start: '0900', day: 1, duration: 50, type: 'L'}]
 	};
 
 	var comp888 = {
@@ -425,9 +442,9 @@ $(document).ready(() => {
 
 	addCourseToTable(comp333);
 	addCourseToTable(comp444);
-	// addCourseToTable(comp777);
-	// addCourseToTable(comp888);
-	// addCourseToTable(comp999);
+	addCourseToTable(comp777);
+	addCourseToTable(comp888);
+	addCourseToTable(comp999);
 
 });
 
