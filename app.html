@@ -1286,17 +1286,33 @@ CourseItem.prototype.getColor = function() {
 
 CourseItem.prototype.setWidth = function(width) {
 	this.width = width;
-	// TODO: update dom element with new width.
 	if (this.blockDom) {
-		this.blockDom.css('width', width * SLOT_WIDTH)
+		// this.blockDom
+		// console.log('setting width', this.blockDom);
+
+		// var FACTOR = 0.178;
+		var p = 20 / (NUMBER_OF_SLOTS / width);
+		// var p = (SLOT_WIDTH * width / this.blockDom.parent().width() / FACTOR) * 100;
+		this.blockDom.css('width', 'calc(' + p.toString() + '% - ' + p.toString() + 'px)');
+		// this.textDom.css('width', 'calc(' + p.toString() + '% - ' + p.toString() + 'px)');
+
+
+		// this.blockDom.css('width', p.toString() + '%');
+		// this.textDom.css('width', p.toString() + '%')
+		// this.blockDom.css('width', width * SLOT_WIDTH);
 	}
 };
 
 CourseItem.prototype.setXPosition = function(xPos) {
 	this.xPosition = xPos;
-	// TODO: update dom element with new xposition.
 	if (this.blockDom) {
-		this.blockDom.css('left', xPos * SLOT_WIDTH);
+		// var FACTOR = 0.178;
+		var p = 20 / (NUMBER_OF_SLOTS / xPos);
+		var c = 20 / (NUMBER_OF_SLOTS / xPos);
+		// this.blockDom.css('left', xPos * SLOT_WIDTH);
+		// this.blockDom.css('left', p.toString() + '%');
+		this.blockDom.css('left', 'calc(' + p.toString() + '% - ' + p.toString() + 'px)');
+		// this.blockDom.css('left', p.toString() + '%');
 	}
 };
 
@@ -1418,7 +1434,7 @@ function removeCourseFromTable(crn) {
 		for (var i = 0; i < items.length; i++) {
 			var item = items[i];
 
-			console.log(item);
+			// console.log(item);
 
 			if (i == 0) {
 				unassigned_colors.push(item.colorIndex);
@@ -1812,10 +1828,11 @@ body{
 .main-content{
 	background-color:#f3f3f3;
 	padding-left: 0px;
+	width: 90vw;
 }
 
 .list-group {
-	padding-right: 50px;
+	padding-right: 30px;
 }
 
 .banner-bar {
@@ -1867,8 +1884,8 @@ grey700 #616161
 	margin-top: 90px;
 	padding-top: 10px;
 	padding-right: 10px;
-	padding-left: 10px;
-	height: 350px;
+	padding-left: 50px;
+	height: calc(100vh - 100px);
 	overflow: auto;
 }
 
@@ -1917,17 +1934,22 @@ grey700 #616161
 .third-list {
 	list-style-type: none;
 	display: none;
+	padding-left: 14px;
 }
 
 .third-list > li{
 	border: solid black 1px;
 	border-bottom: none;
 	display:block;
-	width: 40%;
+	width: 90%;
 }
 
 .third-list > li:last-child{
 	border-bottom: solid black 1px;
+}
+
+.list-group-item {
+	margin-top: 8px;
 }
 
 
@@ -1944,8 +1966,8 @@ li:hover {
 	background-color: #e0e2e5;
 	color: #003e51;
 	text-align:center;
-	width: 100%;
 	padding-left: 10px;
+	margin-top: 65px;
 }
 
 </style>
@@ -1969,11 +1991,13 @@ table.schedule-table {
 	width: 70px;
 }
 .schedule-table tr > th:nth-child(n+2) {
-	width: 200px;  /* Width of the columns for each day */
+	/*width: 200px;   Width of the columns for each day */
+	width: 25%;
 }
 
 .schedule-table .day-header {
 	color: black;
+	text-align: center;
 }
 
 /* Styling for body rows */
@@ -2006,6 +2030,7 @@ table.schedule-table {
 
 .schedule-table td.course-item > .course-item-blocks {
 	position: absolute;
+	width: 100%;
 }
 
 .schedule-table td.course-item .course-item-block {
@@ -2032,17 +2057,20 @@ table.schedule-table {
 
 .schedule-table div.course-item-texts {
 	position: absolute;
+	width: calc(20% - 20px);
 }
 
 .schedule-table div.course-item-text {
 	display: block;
-	width: 200px;
+	width: 100px;
 	color: magenta;
 	font-size: 14px;
 	font-weight: 600;
 	text-shadow: 0px 0px 5px black, 1px 1px 1px black, -1px -1px 1px black, 0px 1px 1px black, 1px 0px 1px black;
 	text-align: center;
 	letter-spacing: 1px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* For styling nth column */
@@ -2060,7 +2088,10 @@ table.schedule-table {
 <h1 class="header-text">TRU Assistant</h1>
 </div>
 <div class="container main-content">
-<div class='container filter'>
+
+<div class="row">
+
+<div class='container filter col-sm-4'>
 <!-- Dynamic filter dialog is here -->
 
 <label for="term"> Term: </label> 
@@ -2069,7 +2100,7 @@ table.schedule-table {
 	<!-- <option value="Winter 2018"> Winter 2018 </option> -->
 </select>
 
-<br/><br/>
+<br/>
 <!-- <div class='container'> !-->
 
 <ul class="list-group primary-list">
@@ -2145,8 +2176,8 @@ table.schedule-table {
 					<li class='filter-li'> <data value="20410">  COMP 4530 <input class='course-checkbox' type="checkbox">
 					<br> Advanced Software Engineering</data></li>
 
-					<li class='filter-li'> <data value="20423"> COMP 4980<input class='course-checkbox' type="checkbox">
-					<br> ST: Software Testing</data></li>
+					<!-- <li class='filter-li'> <data value="20423"> COMP 4980<input class='course-checkbox' type="checkbox">
+					<br> ST: Software Testing</data></li> -->
 
 					<li class='filter-li'> <data value="21562"> COMP 4980<input class='course-checkbox' type="checkbox">
 					<br> ST: Virtual Reality</data></li>
@@ -2222,7 +2253,7 @@ table.schedule-table {
 
 </div>
 <!-- </div> -->
-<div class='schedule-box'>
+<div class='schedule-box col-sm-8'>
 <!-- Schedule visualization goes here -->
 
 <div class="schedule-header">
@@ -2232,7 +2263,7 @@ table.schedule-table {
 <table class="table schedule-table">
 	<thead>
 	  <tr>
-	    <th>Time</th>
+	    <th style='text-align: center; vertical-align: middle;'>Time</th>
 	    <th class='day-header'>Monday</th>
 	    <th class='day-header'>Tuesday</th>
 	    <th class='day-header'>Wednesday</th>
@@ -2431,6 +2462,7 @@ table.schedule-table {
 	</tbody>
 </table>
 
+</div>
 </div>
 </div>
 
