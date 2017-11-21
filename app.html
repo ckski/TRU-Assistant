@@ -1811,27 +1811,17 @@ body{
 }
 
 .container{
-	
 	color: black;
 	/* text-align:center; */
-	
-
-	
-
 }
 
 .main-content{
-
 	background-color:#f3f3f3;
-
+	padding-left: 0px;
 }
 
 .list-group {
-	
-
-
-
-
+	padding-right: 50px;
 }
 
 .banner-bar {
@@ -1842,9 +1832,8 @@ body{
 	width: 100%;
 
 	z-index: 999;
-	height: 10%;
+	height: 80px;
 	
-
 /*
 grey100 #f5f5f5
 grey200 #eeeeee
@@ -1854,7 +1843,6 @@ grey500 #9e9e9e
 grey600 #757575
 grey700 #616161
 */
-
 }
 
 .logo-image{
@@ -1877,21 +1865,20 @@ grey700 #616161
 <style>
 /* Filter dialog styling */
 
-
 .filter-li {
 	padding: 4px;
 }
 
-.filter{
-
-
+.container.filter {
+	margin-top: 90px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	height: 350px;
+	overflow: auto;
 }
 
-
 .primary-list{
-	
-
-
 
 }
 
@@ -1906,31 +1893,21 @@ grey700 #616161
 	display:none;
 	width:15px; 
 	height:15px;
-
-
 }
 
 .image-left{
-	
 	width:15px; 
 	height:15px;
-
-
 }
 .image-inner{
 	display:none;
 	width:10px; 
 	height:10px;
-
-
 }
 
 .image-left-inner{
-	
 	width:10px; 
 	height:10px;
-
-
 }
 
 .secondary-list{
@@ -1944,17 +1921,14 @@ grey700 #616161
 }
 
 .third-list > li{
-	
 	border: solid black 1px;
 	border-bottom: none;
 	display:block;
 	width: 40%;
-
 }
 
 .third-list > li:last-child{
 	border-bottom: solid black 1px;
-
 }
 
 
@@ -1971,15 +1945,8 @@ li:hover {
 	background-color: #e0e2e5;
 	color: #003e51;
 	text-align:center;
-<<<<<<< HEAD
-
-	
-
-	
-
-=======
 	width: 100%;
->>>>>>> c9db4f2e69ee03c207fe276da210c281bcff4332
+	padding-left: 10px;
 }
 
 </style>
@@ -1988,16 +1955,13 @@ li:hover {
 /* Schedule visualization styling */
 
 .schedule-header{
-
 	background-color:#003e51;
 	color: white;
 }
 
 table.schedule-table {
-	
 	background-color: white;
 	table-layout: fixed;
-	
 }
 
 /* Styling for table headers */
@@ -2007,7 +1971,6 @@ table.schedule-table {
 .schedule-table tr > th:nth-child(n+2) {
 	width: 200px;  /* Width of the columns for each day */
 }
-
 
 .schedule-table .day-header {
 	color: black;
@@ -2026,7 +1989,6 @@ table.schedule-table {
 .schedule-table tr > *:nth-child(1) > span.time-30-text {
 	display: none;
 }
-
 
 
 /* Styling for the columns after 1st */
@@ -2100,11 +2062,6 @@ table.schedule-table {
 <div class='container filter'>
 <!-- Dynamic filter dialog is here -->
 
-<br>
-<br>
-<br>
-<br>
-<br>
 <label for="term"> Term: </label> 
 <select name="term"> 
 	<option value="Fall 2017"> Fall 2017 </option>
