@@ -1119,7 +1119,111 @@ var COURSE_DATA = {"10418": {
     ],
     "type": "S",
     "timecode": "201720"
-  },};
+  }, "10901": {
+    "ID": "MATH 1070 ",
+    "start": "1130",
+    "duration": 50,
+    "days": [
+      1,
+      2,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10916": {
+    "ID": "MATH 1100 ",
+    "start": "0830",
+    "duration": 50,
+    "days": [
+      0,
+      2,
+      3
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10958": {
+    "ID": "MATH 2110 ",
+    "start": "1130",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "10960": {
+    "ID": "MATH 2120 ",
+    "start": "1430",
+    "duration": 50,
+    "days": [
+      1,
+      2,
+      4
+    ],
+    "type": "L",
+    "timecode": "201810"
+  },
+  "20925": {
+    "ID": "MATH 2240 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      1,
+      2,
+      4
+    ],
+    "type": "L",
+    "timecode": "201720"
+  },
+  "20927": {
+    "ID": "MATH 3030 ",
+    "start": "1430",
+    "duration": 50,
+    "days": [
+      1,
+      2,
+      4
+    ],
+    "type": "L",
+    "timecode": "201720"
+  },
+  "20929": {
+    "ID": "MATH 3170 ",
+    "start": "1030",
+    "duration": 50,
+    "days": [
+      0,
+      3
+    ],
+    "type": "L",
+    "timecode": "201720"
+  },
+  "20931": {
+    "ID": "MATH 3220 ",
+    "start": "1530",
+    "duration": 50,
+    "days": [
+      0,
+      1,
+      4
+    ],
+    "type": "L",
+    "timecode": "201720"
+  },
+  "21987": {
+    "ID": "MATH 4990 ",
+    "start": "1130",
+    "duration": 75,
+    "days": [
+      0
+    ],
+    "type": "L",
+    "timecode": "201720"
+  }};
 
 
 </script>
@@ -1257,7 +1361,6 @@ function timeStringAddMinutes(time, m) {
 var courses_in_table = {};
 
 function addCourseToTable(course_offering) {
-	console.log('adding course', course_offering);
 	var dom_holder = [];
 	courses_in_table[course_offering.crn] = dom_holder;
 
@@ -1300,7 +1403,7 @@ function addCourseToTable(course_offering) {
 
 		// console.log(scheduleVizTable);
 	}
-	console.log(course_offering.crn, dom_holder);
+	// console.log(course_offering.crn, dom_holder);
 
 }
 
@@ -1310,7 +1413,7 @@ function removeCourseFromTable(crn) {
 	if (items) {
 		var blocks_touched = [];
 			
-		console.log('remove', crn, items);
+		// console.log('remove', crn, items);
 
 		for (var i = 0; i < items.length; i++) {
 			var item = items[i];
@@ -1775,6 +1878,10 @@ grey700 #616161
 /* Filter dialog styling */
 
 
+.filter-li {
+	padding: 4px;
+}
+
 .filter{
 
 
@@ -1790,8 +1897,8 @@ grey700 #616161
 
 .course-checkbox {
 	float: right;
-	margin-right: 10px;
-	margin-top: 15px;
+	margin-right: 10px !important; 
+	margin-top: 15px !important;
 	/* margin-bottom: 40px;  ?????? */ 
 }
 
@@ -2001,7 +2108,7 @@ table.schedule-table {
 <label for="term"> Term: </label> 
 <select name="term"> 
 	<option value="Fall 2017"> Fall 2017 </option>
-	<option value="Winter 2018"> Winter 2018 </option>
+	<!-- <option value="Winter 2018"> Winter 2018 </option> -->
 </select>
 
 <br/><br/>
@@ -2099,9 +2206,9 @@ table.schedule-table {
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				MATH 1xxx </li>
 				<ul class="third-list" >
-					<li class='filter-li'> <data value="10898"> MATH 1000 <input class='course-checkbox' type="checkbox">
+					<!-- <li class='filter-li'> <data value="10898"> MATH 1000 <input class='course-checkbox' type="checkbox">
 						<br> Pre-Calculus
-						</data></li>
+						</data></li> -->
 					<li class='filter-li'> <data value="10901"> MATH 1070 <input class='course-checkbox' type="checkbox">
 						<br> Fundamentals of Mathematics for Business and Economics
 						</data></li>
