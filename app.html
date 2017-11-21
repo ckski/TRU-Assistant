@@ -74,8 +74,8 @@ var COURSE_DATA = {"10418": {
   },
   "10423": {
     "ID": "COMP 1070 ",
-    "start": "1130",
-    "duration": 50,
+    "start": "1030",
+    "duration": 400,
     "days": [
       3
     ],
@@ -319,7 +319,7 @@ var COURSE_DATA = {"10418": {
   "10453": {
     "ID": "COMP 2210 ",
     "start": "1330",
-    "duration": 50,
+    "duration": 120,
     "days": [
       0,
       1,
@@ -637,8 +637,8 @@ var COURSE_DATA = {"10418": {
   },
   "20368": {
     "ID": "COMP 1070 ",
-    "start": "1330",
-    "duration": 50,
+    "start": "1030",
+    "duration": 400,
     "days": [
       1
     ],
@@ -1427,11 +1427,10 @@ function removeCourseFromTable(crn) {
 	// console.log(scheduleVizTable);
 	var items = courses_in_table[crn];
 	if (items) {
-		var blocks_touched = [];
-			
 		// console.log('remove', crn, items);
 
 		for (var i = 0; i < items.length; i++) {
+			var blocks_touched = [];
 			var item = items[i];
 
 			// console.log(item);
@@ -1447,17 +1446,29 @@ function removeCourseFromTable(crn) {
 				var t = timeStringAddMinutes(item.start, j);
 
 				var arr = scheduleVizTable[item.day][t];
-				arr.splice(arr.indexOf(item), 1);
-				blocks_touched.push({day: item.day, time: t});
+				if (arr) {
+					arr.splice(arr.indexOf(item), 1);
+					// blocks_touched.push({day: item.day, time: t});
+				}
+			}
+
+			for (var j = 0; j <= 630; j += 30) {
+				var t = timeStringAddMinutes("0800", j);
+
+				var arr = scheduleVizTable[item.day][t];
+				if (arr) {
+					// arr.splice(arr.indexOf(item), 1);
+					blocks_touched.push({day: item.day, time: t});
+				}
 			}
 
 			item.blockDom.remove();
 			item.textDom.remove();
+
+			doBlockLayout(blocks_touched);
 		}
 		
 		// console.log(scheduleVizTable);
-
-		doBlockLayout(blocks_touched);
 	}
 	delete courses_in_table[crn];
 }
