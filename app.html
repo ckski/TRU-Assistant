@@ -22,1208 +22,1183 @@
 
 <script>
 
-var COURSE_DATA = {"10418": {
-    "ID": "COMP 1020 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      3
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10419": {
-    "ID": "COMP 1020 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      3
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10420": {
-    "ID": "COMP 1030 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10421": {
-    "ID": "COMP 1050 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10422": {
-    "ID": "COMP 1050 ",
-    "start": "1230",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10423": {
-    "ID": "COMP 1070 ",
-    "start": "1030",
-    "duration": 400,
-    "days": [
-      3
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10424": {
-    "ID": "COMP 1080 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10425": {
-    "ID": "COMP 1090 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10426": {
-    "ID": "COMP 1130 ",
-    "start": "0930",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10427": {
-    "ID": "COMP 1130 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      1,
-      3,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10428": {
-    "ID": "COMP 1130 ",
-    "start": "1230",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10430": {
-    "ID": "COMP 1130 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10431": {
-    "ID": "COMP 1130 ",
-    "start": "0930",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10432": {
-    "ID": "COMP 1130 ",
-    "start": "1830",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10434": {
-    "ID": "COMP 1130 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10435": {
-    "ID": "COMP 1130 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10436": {
-    "ID": "COMP 1130 ",
-    "start": "1730",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10438": {
-    "ID": "COMP 1230 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      0,
-      3,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10439": {
-    "ID": "COMP 1230 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10440": {
-    "ID": "COMP 1230 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10441": {
-    "ID": "COMP 1230 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      4
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10442": {
-    "ID": "COMP 1520 ",
-    "start": "1330",
-    "duration": 50,
-    "days": [
-      0,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10443": {
-    "ID": "COMP 1520 ",
-    "start": "1430",
-    "duration": 110,
-    "days": [
-      2
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10444": {
-    "ID": "COMP 1520 ",
-    "start": "1230",
-    "duration": 110,
-    "days": [
-      1
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10445": {
-    "ID": "COMP 1810 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10446": {
-    "ID": "COMP 1810 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10447": {
-    "ID": "COMP 2130 ",
-    "start": "1630",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10448": {
-    "ID": "COMP 2130 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10453": {
-    "ID": "COMP 2210 ",
-    "start": "1330",
-    "duration": 100,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10454": {
-    "ID": "COMP 2210 ",
-    "start": "1330",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10457": {
-    "ID": "COMP 2680 ",
-    "start": "1630",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10458": {
-    "ID": "COMP 2680 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      4
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10459": {
-    "ID": "COMP 2920 ",
-    "start": "1330",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10460": {
-    "ID": "COMP 2920 ",
-    "start": "1330",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10465": {
-    "ID": "COMP 3270 ",
-    "start": "1630",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      3
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10466": {
-    "ID": "COMP 3270 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      4
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10467": {
-    "ID": "COMP 3410 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10468": {
-    "ID": "COMP 3410 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10471": {
-    "ID": "COMP 3520 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10472": {
-    "ID": "COMP 3520 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10473": {
-    "ID": "COMP 3540 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      0,
-      2,
-      3
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10474": {
-    "ID": "COMP 3540 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      4
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10475": {
-    "ID": "COMP 3610 ",
-    "start": "130",
-    "duration": 75,
-    "days": [
-      0,
-      2
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10476": {
-    "ID": "COMP 3610 ",
-    "start": "1630",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10477": {
-    "ID": "COMP 3710 ",
-    "start": "1130",
-    "duration": 75,
-    "days": [
-      1,
-      3
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10478": {
-    "ID": "COMP 3710 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10479": {
-    "ID": "COMP 4530 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      3
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10480": {
-    "ID": "COMP 4530 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10482": {
-    "ID": "COMP 4980 ",
-    "start": "0830",
-    "duration": 110,
-    "days": [
-      0
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10483": {
-    "ID": "COMP 4980 ",
-    "start": "0830",
-    "duration": 75,
-    "days": [
-      0,
-      2
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10484": {
-    "ID": "COMP 4980 ",
-    "start": "130",
-    "duration": 75,
-    "days": [
-      0,
-      2
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10485": {
-    "ID": "COMP 4980 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10486": {
-    "ID": "COMP 4980 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },
-  "10487": {
-    "ID": "COMP 4980 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201810"
-  },"20364": {
-    "ID": "COMP 1020 ",
-    "start": "1630",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20365": {
-    "ID": "COMP 1020 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20366": {
-    "ID": "COMP 1030 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20367": {
-    "ID": "COMP 1050 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20368": {
-    "ID": "COMP 1070 ",
-    "start": "1030",
-    "duration": 400,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20369": {
-    "ID": "COMP 1080 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20370": {
-    "ID": "COMP 1090 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20371": {
-    "ID": "COMP 1130 ",
-    "start": "1330",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20372": {
-    "ID": "COMP 1130 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20373": {
-    "ID": "COMP 1130 ",
-    "start": "1330",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20374": {
-    "ID": "COMP 1130 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20375": {
-    "ID": "COMP 1130 ",
-    "start": "1230",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20376": {
-    "ID": "COMP 1130 ",
-    "start": "1330",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20377": {
-    "ID": "COMP 1150 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20378": {
-    "ID": "COMP 1230 ",
-    "start": "1230",
-    "duration": 50,
-    "days": [
-      0,
-      2
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20379": {
-    "ID": "COMP 1230 ",
-    "start": "0930",
-    "duration": 50,
-    "days": [
-      1,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20380": {
-    "ID": "COMP 1230 ",
-    "start": "1230",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20381": {
-    "ID": "COMP 1230 ",
-    "start": "0930",
-    "duration": 50,
-    "days": [
-      3
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20382": {
-    "ID": "COMP 1810 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      1,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20383": {
-    "ID": "COMP 1810 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      3
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20384": {
-    "ID": "COMP 2130 ",
-    "start": "160",
-    "duration": 75,
-    "days": [
-      0
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20385": {
-    "ID": "COMP 2130 ",
-    "start": "0930",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20386": {
-    "ID": "COMP 2160 ",
-    "start": "1030",
-    "duration": 110,
-    "days": [
-      0
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20387": {
-    "ID": "COMP 2160 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      4
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20388": {
-    "ID": "COMP 2210 ",
-    "start": "1230",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20389": {
-    "ID": "COMP 2210 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20390": {
-    "ID": "COMP 2230 ",
-    "start": "1230",
-    "duration": 50,
-    "days": [
-      0,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20391": {
-    "ID": "COMP 2230 ",
-    "start": "1230",
-    "duration": 50,
-    "days": [
-      3
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20392": {
-    "ID": "COMP 2680 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      3
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20393": {
-    "ID": "COMP 2680 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20394": {
-    "ID": "COMP 2920 ",
-    "start": "1630",
-    "duration": 75,
-    "days": [
-      1,
-      3
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20395": {
-    "ID": "COMP 2920 ",
-    "start": "1630",
-    "duration": 50,
-    "days": [
-      4
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20398": {
-    "ID": "COMP 3160 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      1,
-      3
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20399": {
-    "ID": "COMP 3160 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20400": {
-    "ID": "COMP 3270 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      0,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20401": {
-    "ID": "COMP 3270 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      3
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20402": {
-    "ID": "COMP 3410 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20403": {
-    "ID": "COMP 3410 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      1
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20404": {
-    "ID": "COMP 3520 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      3
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20405": {
-    "ID": "COMP 3520 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20406": {
-    "ID": "COMP 3540 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20407": {
-    "ID": "COMP 3540 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20408": {
-    "ID": "COMP 3610 ",
-    "start": "1330",
-    "duration": 50,
-    "days": [
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20409": {
-    "ID": "COMP 3610 ",
-    "start": "0930",
-    "duration": 50,
-    "days": [
-      0
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20410": {
-    "ID": "COMP 4530 ",
-    "start": "1630",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      3
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20411": {
-    "ID": "COMP 4530 ",
-    "start": "1630",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "20423": {
-    "ID": "COMP 4980 ",
-    "start": "100",
-    "duration": 75,
-    "days": [
-      2
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20425": {
-    "ID": "COMP 4980 ",
-    "start": "1730",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  },
-  "21562": {
-    "ID": "COMP 4980 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "21563": {
-    "ID": "COMP 4980 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      2
-    ],
-    "type": "S",
-    "timecode": "201720"
-  }, "10901": {
-    "ID": "MATH 1070 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      1,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10916": {
-    "ID": "MATH 1100 ",
-    "start": "0830",
-    "duration": 50,
-    "days": [
-      0,
-      2,
-      3
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10958": {
-    "ID": "MATH 2110 ",
-    "start": "1130",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "10960": {
-    "ID": "MATH 2120 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      1,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201810"
-  },
-  "20925": {
-    "ID": "MATH 2240 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      1,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20927": {
-    "ID": "MATH 3030 ",
-    "start": "1430",
-    "duration": 50,
-    "days": [
-      1,
-      2,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20929": {
-    "ID": "MATH 3170 ",
-    "start": "1030",
-    "duration": 50,
-    "days": [
-      0,
-      3
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "20931": {
-    "ID": "MATH 3220 ",
-    "start": "1530",
-    "duration": 50,
-    "days": [
-      0,
-      1,
-      4
-    ],
-    "type": "L",
-    "timecode": "201720"
-  },
-  "21987": {
-    "ID": "MATH 4990 ",
-    "start": "1130",
-    "duration": 75,
-    "days": [
-      0
-    ],
-    "type": "L",
-    "timecode": "201720"
-  }};
+
+var COURSE_DATA = {
+	"20425": {
+		"ID": "COMP 1020",
+		"title": 'Introduction to Spreadsheets',
+		"start": "1130",
+		"duration": 50,
+		"days": [1],
+		"type": "L"
+	},
+	"20426": {
+		"ID": "COMP 1020",
+		"duration": 50,
+		"start": "1530",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20427": {
+		"ID": "COMP 1030",
+		"title": 'Introduction to Databases',
+		"start": "0830",
+		"duration": 50,
+		"days": [1],
+		"type": "L"
+	},
+
+	"20428": {
+		"ID": "COMP 1050",
+		"title": 'Computer System Maintenance',
+		"start": "0830",
+		"duration": 50,
+		"days": [0],
+		"type": "L"
+	},
+
+	"20429": {
+		"ID": "COMP 1070",
+		"title": 'Introduction to Digital Media',
+		"start": "1630",
+		"duration": 50,
+		"days": [2],
+		"type": "L"
+	},
+
+	"20430": {
+		"ID": "COMP 1080",
+		"title": 'Introduction to Web Development',
+		"start": "1630",
+		"duration": 50,
+		"days": [2],
+		"type": "L"
+	},
+
+	"20431": {
+		"ID": "COMP 1090",
+		"title": 'Introduction to Linux',
+		"start": "1330",
+		"duration": 50,
+		"days": [1],
+		"type": "L"
+	},
+
+	"20432": {
+		"ID": "COMP 1130&#8209;01",
+		"title": 'Computer Programming 1',
+		"start": "1530",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"20433": {
+		"ID": "COMP 1130&#8209;01",
+		"title": 'Computer Programming 1',
+		"duration": 110,
+		"start": "1530",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20434": {
+		"ID": "COMP 1130&#8209;02",
+		"title": 'Computer Programming 1',
+		"start": "1430",
+		"duration": 50,
+		"days": [0,2,4],
+		"type": "L"
+	},
+	"20435": {
+		"ID": "COMP 1130&#8209;02",
+		"title": 'Computer Programming 1',
+		"duration": 110,
+		"start": "1530",
+		"days": [4],
+		"type": "S"
+	},
+
+	"20438": {
+		"ID": "COMP 1150",
+		"title": 'Introduction to 3D Animation',
+		"start": "1230",
+		"duration": 50,
+		"days": [1],
+		"type": "L"
+	},
+
+	"20439": {
+		"ID": "COMP 1230&#8209;01",
+		"title": 'Computer Programming 2',
+		"start": "0930",
+		"duration": 50,
+		"days": [0,2,4],
+		"type": "L"
+	},
+	"20440": {
+		"ID": "COMP 1230&#8209;01",
+		"title": 'Computer Programming 2',
+		"duration": 50,
+		"start": "1330",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20441": {
+		"ID": "COMP 1230&#8209;02",
+		"title": 'Computer Programming 2',
+		"start": "0930",
+		"duration": 50,
+		"days": [0,3,4],
+		"type": "L"
+	},
+	"20442": {
+		"ID": "COMP 1230&#8209;02",
+		"title": 'Computer Programming 2',
+		"duration": 50,
+		"start": "1130",
+		"days": [3],
+		"type": "S"
+	},
+
+	"20443": {
+		"ID": "COMP 1810",
+		"title": 'Game Design and Development 1',
+		"start": "1630",
+		"duration": 50,
+		"days": [1,2,4],
+		"type": "L"
+	},
+	"20426": {
+		"ID": "COMP 1810",
+		"title": 'Game Design and Development 1',
+		"duration": 50,
+		"start": "1630",
+		"days": [3],
+		"type": "S"
+	},
+
+	"20445": {
+		"ID": "COMP 2130",
+		"title": 'Introduction to Computer Systems',
+		"start": "1130",
+		"duration": 75,
+		"days": [0,2],
+		"type": "L"
+	},
+	"20446": {
+		"ID": "COMP 2130",
+		"title": 'Introduction to Computer Systems',
+		"duration": 50,
+		"start": "0830",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20447": {
+		"ID": "COMP 2160",
+		"title": 'Mobile Application Development 1',
+		"start": "1730",
+		"duration": 110,
+		"days": [0,2],
+		"type": "L"
+	},
+
+	"20450": {
+		"ID": "COMP 2210",
+		"title": 'Programming Methods',
+		"start": "1030",
+		"duration": 50,
+		"days": [0,1,3],
+		"type": "L"
+	},
+	"20451": {
+		"ID": "COMP 2210",
+		"title": 'Programming Methods',
+		"duration": 50,
+		"start": "1030",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20452": {
+		"ID": "COMP 2230",
+		"title": 'Data Structures, Algorithm Analysis ',
+		"start": "1330",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"20453": {
+		"ID": "COMP 2230",
+		"title": 'Data Structures, Algorithm Analysis ',
+		"duration": 50,
+		"start": "1230",
+		"days": [1],
+		"type": "S"
+	},
+
+	"20454": {
+		"ID": "COMP 2680",
+		"title": 'Web Site Design and Development',
+		"start": "1530",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"20455": {
+		"ID": "COMP 2680",
+		"title": 'Web Site Design and Development',
+		"duration": 50,
+		"start": "1530",
+		"days": [3],
+		"type": "S"
+	},
+
+	"20456": {
+		"ID": "COMP 2920",
+		"title": 'Software Architecture and Design',
+		"start": "0930",
+		"duration": 50,
+		"days": [1,3,4],
+		"type": "L"
+	},
+	"20457": {
+		"ID": "COMP 2920",
+		"title": 'Software Architecture and Design',
+		"duration": 50,
+		"start": "0930",
+		"days": [2],
+		"type": "S"
+	},
+
+
+	"30456": {
+		"ID": "COMP 3050",
+		"title": 'Algorithm Design and Analysis',
+		"start": "1330",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"30457": {
+		"ID": "COMP 3050",
+		"title": 'Algorithm Design and Analysis',
+		"duration": 50,
+		"start": "1230",
+		"days": [3],
+		"type": "S"
+	},
+
+
+	"30458": {
+		"ID": "COMP 3160",
+		"title": 'Mobile Application Development 2',
+		"start": "1730",
+		"duration": 110,
+		"days": [0,2],
+		"type": "L"
+	},
+
+	"30460": {
+		"ID": "COMP 3260",
+		"title": 'Computer Network Security',
+		"start": "0830",
+		"duration": 50,
+		"days": [1,2,4],
+		"type": "L"
+	},
+	"30461": {
+		"ID": "COMP 3260",
+		"title": 'Computer Network Security',
+		"duration": 50,
+		"start": "0830",
+		"days": [0],
+		"type": "S"
+	},
+
+	"30462": {
+		"ID": "COMP 3270",
+		"title": 'Computer Networks',
+		"start": "1230",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"30463": {
+		"ID": "COMP 3270",
+		"title": 'Computer Networks',
+		"duration": 50,
+		"start": "0930",
+		"days": [0],
+		"type": "S"
+	},
+
+	"30464": {
+		"ID": "COMP 3410",
+		"title": 'Operating Systems',
+		"start": "1130",
+		"duration": 50,
+		"days": [1,2,4],
+		"type": "L"
+	},
+	"30465": {
+		"ID": "COMP 3410",
+		"title": 'Operating Systems',
+		"duration": 50,
+		"start": "1130",
+		"days": [3],
+		"type": "S"
+	},
+
+	"30466": {
+		"ID": "COMP 3450",
+		"title": 'Human-Computer Interaction Design',
+		"start": "1030",
+		"duration": 50,
+		"days": [1,3,4],
+		"type": "L"
+	},
+	"30467": {
+		"ID": "COMP 3450",
+		"title": 'Human-Computer Interaction Design',
+		"duration": 50,
+		"start": "1030",
+		"days": [0],
+		"type": "S"
+	},
+
+	"30468": {
+		"ID": "COMP 3520",
+		"title": 'Software Engineering',
+		"start": "1630",
+		"duration": 50,
+		"days": [0,1,3],
+		"type": "L"
+	},
+	"30469": {
+		"ID": "COMP 3520",
+		"title": 'Software Engineering',
+		"duration": 50,
+		"start": "1630",
+		"days": [2],
+		"type": "S"
+	},
+
+	"30470": {
+		"ID": "COMP 3540",
+		"title": 'Advanced Web Design and Programming',
+		"start": "0930",
+		"duration": 50,
+		"days": [1,3,4],
+		"type": "L"
+	},
+	"30471": {
+		"ID": "COMP 3540",
+		"title": 'Advanced Web Design and Programming',
+		"duration": 50,
+		"start": "0930",
+		"days": [2],
+		"type": "S"
+	},
+
+	"30472": {
+		"ID": "COMP 3610",
+		"title": 'Database Systems',
+		"start": "1330",
+		"duration": 50,
+		"days": [{"day": 0, "start": "1130", "duration": 50},
+						 {"day": 1, "start": "1430", "duration": 110},
+						 {"day": 2, "start": "1330", "duration": 50}],
+		"type": "L"
+	},
+
+	"30474": {
+		"ID": "COMP 3710",
+		"title": 'Applied Artificial Intelligence',
+		"start": "1430",
+		"duration": 110,
+		"days": [2,4],
+		"type": "L"
+	},
+
+	"20476": {
+		"ID": "COMP 4530",
+		"title": 'Advanced Software Engineering',
+		"start": "1630",
+		"duration": 50,
+		"days": [0,1,3],
+		"type": "L"
+	},
+	"20477": {
+		"ID": "COMP 4530",
+		"title": 'Advanced Software Engineering',
+		"duration": 50,
+		"start": "1630",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20478": {
+		"ID": "COMP 4610",
+		"title": 'Advanced Database Systems',
+		"start": "1530",
+		"duration": 50,
+		"days": [{"day": 0, "start": "1430", "duration": 110},
+						 {"day": 2, "start": "1030", "duration": 50},
+						 {"day": 2, "start": "1230", "duration": 50}],
+		"type": "L"
+	},
+
+	"20481": {
+		"ID": "COMP 4910",
+		"title": 'Computing Science Project - Time TBA',
+		"start": "0000",
+		"duration": 50,
+		"days": [0],
+		"type": "L"
+	},
+
+	"20482": {
+		"ID": "COMP 4980",
+		"title": 'ST: Software Testing',
+		"start": "1730",
+		"duration": 110,
+		"days": [1,3],
+		"type": "L"
+	},
+
+
+
+
+
+
+	"10901": {
+	    "ID": "MATH 1070",
+	    "title": "Fundamentals of Mathematics for Business and Economics",
+	    "start": "1130",
+	    "duration": 50,
+	    "days": [
+	      1,
+	      2,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201810"
+	  },
+	  "10916": {
+	    "ID": "MATH 1100",
+	    "title": "Finite Mathematics with Applications 1",
+	    "start": "0830",
+	    "duration": 50,
+	    "days": [
+	      0,
+	      2,
+	      3
+	    ],
+	    "type": "L",
+	    "timecode": "201810"
+	  },
+	  "10958": {
+	    "ID": "MATH 2110",
+	    "title": "Calculus 3",
+	    "start": "1130",
+	    "duration": 50,
+	    "days": [
+	      0,
+	      1,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201810"
+	  },
+	  "10960": {
+	    "ID": "MATH 2120",
+	    "title": "Linear Algebra 1",
+	    "start": "1430",
+	    "duration": 50,
+	    "days": [
+	      1,
+	      2,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201810"
+	  },
+	  "20925": {
+	    "ID": "MATH 2240",
+	    "title": "Differential Equations 1",
+	    "start": "1030",
+	    "duration": 50,
+	    "days": [
+	      1,
+	      2,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  },
+	  "20927": {
+	    "ID": "MATH 3030",
+	    "title": "Introduction to Stochastic Processes",
+	    "start": "1430",
+	    "duration": 50,
+	    "days": [
+	      1,
+	      2,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  },
+	  "20929": {
+	    "ID": "MATH 3170",
+	    "title": "Calculus 4",
+	    "start": "1030",
+	    "duration": 50,
+	    "days": [
+	      0,
+	      3
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  },
+	  "20931": {
+	    "ID": "MATH 3220",
+	    "title": "Abstract Algebra",
+	    "start": "1530",
+	    "duration": 50,
+	    "days": [
+	      0,
+	      1,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  },
+	  "21987": {
+	    "ID": "MATH 4990",
+	    "title": "ST: Applied Math",
+	    "start": "1130",
+	    "duration": 75,
+	    "days": [
+	      0
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  }
+};
+
+
+var OLD_COURSE_DATA = {
+	"20425": {
+		"ID": "COMP 1020",
+		"title": 'Introduction to Spreadsheets',
+		"start": "1130",
+		"duration": 50,
+		"days": [1],
+		"type": "L"
+	},
+	"20426": {
+		"ID": "COMP 1020",
+		"duration": 50,
+		"start": "1530",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20427": {
+		"ID": "COMP 1030",
+		"title": 'Introduction to Databases',
+		"start": "0830",
+		"duration": 50,
+		"days": [1],
+		"type": "L"
+	},
+
+	"20428": {
+		"ID": "COMP 1050",
+		"title": 'Computer System Maintenance',
+		"start": "0830",
+		"duration": 50,
+		"days": [0],
+		"type": "L"
+	},
+
+	"20429": {
+		"ID": "COMP 1070",
+		"title": 'Introduction to Digital Media',
+		"start": "1630",
+		"duration": 50,
+		"days": [2],
+		"type": "L"
+	},
+
+	"20430": {
+		"ID": "COMP 1080",
+		"title": 'Introduction to Web Development',
+		"start": "1630",
+		"duration": 50,
+		"days": [2],
+		"type": "L"
+	},
+
+	"20431": {
+		"ID": "COMP 1090",
+		"title": 'Introduction to Linux',
+		"start": "1330",
+		"duration": 50,
+		"days": [1],
+		"type": "L"
+	},
+
+	"20432": {
+		"ID": "COMP 1130&#8209;01",
+		"title": 'Computer Programming 1',
+		"start": "1530",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"20433": {
+		"ID": "COMP 1130&#8209;01",
+		"title": 'Computer Programming 1',
+		"duration": 110,
+		"start": "1530",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20434": {
+		"ID": "COMP 1130&#8209;02",
+		"title": 'Computer Programming 1',
+		"start": "1430",
+		"duration": 50,
+		"days": [0,2,4],
+		"type": "L"
+	},
+	"20435": {
+		"ID": "COMP 1130&#8209;02",
+		"title": 'Computer Programming 1',
+		"duration": 110,
+		"start": "1530",
+		"days": [4],
+		"type": "S"
+	},
+
+	"20438": {
+		"ID": "COMP 1150",
+		"title": 'Introduction to 3D Animation',
+		"start": "1230",
+		"duration": 50,
+		"days": [1],
+		"type": "L"
+	},
+
+	"20439": {
+		"ID": "COMP 1230&#8209;01",
+		"title": 'Computer Programming 2',
+		"start": "0930",
+		"duration": 50,
+		"days": [0,2,4],
+		"type": "L"
+	},
+	"20440": {
+		"ID": "COMP 1230&#8209;01",
+		"title": 'Computer Programming 2',
+		"duration": 50,
+		"start": "1330",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20441": {
+		"ID": "COMP 1230&#8209;02",
+		"title": 'Computer Programming 2',
+		"start": "0930",
+		"duration": 50,
+		"days": [0,3,4],
+		"type": "L"
+	},
+	"20442": {
+		"ID": "COMP 1230&#8209;02",
+		"title": 'Computer Programming 2',
+		"duration": 50,
+		"start": "1130",
+		"days": [3],
+		"type": "S"
+	},
+
+	"20443": {
+		"ID": "COMP 1810",
+		"title": 'Game Design and Development 1',
+		"start": "1630",
+		"duration": 50,
+		"days": [1,2,4],
+		"type": "L"
+	},
+	"20426": {
+		"ID": "COMP 1810",
+		"title": 'Game Design and Development 1',
+		"duration": 50,
+		"start": "1630",
+		"days": [3],
+		"type": "S"
+	},
+
+	"20445": {
+		"ID": "COMP 2130",
+		"title": 'Introduction to Computer Systems',
+		"start": "1130",
+		"duration": 75,
+		"days": [0,2],
+		"type": "L"
+	},
+	"20446": {
+		"ID": "COMP 2130",
+		"title": 'Introduction to Computer Systems',
+		"duration": 50,
+		"start": "0830",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20447": {
+		"ID": "COMP 2160",
+		"title": 'Mobile Application Development 1',
+		"start": "1230",
+		"duration": 50,
+		"days": [0],
+		"type": "L"
+	},
+	"20448": {
+		"ID": "COMP 2160",
+		"title": 'Mobile Application Development 1',
+		"duration": 110,
+		"start": "1430",
+		"days": [4],
+		"type": "L"
+	},
+	"20449": {
+		"ID": "COMP 2160",
+		"title": 'Mobile Application Development 1',
+		"start": "0930",
+		"duration": 50,
+		"days": [1],
+		"type": "S"
+	},
+
+	"20450": {
+		"ID": "COMP 2210",
+		"title": 'Programming Methods',
+		"start": "1030",
+		"duration": 50,
+		"days": [0,1,3],
+		"type": "L"
+	},
+	"20451": {
+		"ID": "COMP 2210",
+		"title": 'Programming Methods',
+		"duration": 50,
+		"start": "1030",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20452": {
+		"ID": "COMP 2230",
+		"title": 'Data Structures, Algorithm Analysis ',
+		"start": "1330",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"20453": {
+		"ID": "COMP 2230",
+		"title": 'Data Structures, Algorithm Analysis ',
+		"duration": 50,
+		"start": "1130",
+		"days": [4],
+		"type": "S"
+	},
+
+	"20454": {
+		"ID": "COMP 2680",
+		"title": 'Web Site Design and Development',
+		"start": "1530",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"20455": {
+		"ID": "COMP 2680",
+		"title": 'Web Site Design and Development',
+		"duration": 50,
+		"start": "1530",
+		"days": [3],
+		"type": "S"
+	},
+
+	"20456": {
+		"ID": "COMP 2920",
+		"title": 'Software Architecture and Design',
+		"start": "1330",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"20457": {
+		"ID": "COMP 2920",
+		"title": 'Software Architecture and Design',
+		"duration": 50,
+		"start": "1330",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20458": {
+		"ID": "COMP 3160",
+		"title": 'Mobile Application Development 2',
+		"start": "0830",
+		"duration": 50,
+		"days": [0,1,3],
+		"type": "L"
+	},
+	"20459": {
+		"ID": "COMP 3160",
+		"title": 'Mobile Application Development 2',
+		"duration": 50,
+		"start": "0830",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20460": {
+		"ID": "COMP 3260",
+		"title": 'Computer Network Security',
+		"start": "0830",
+		"duration": 50,
+		"days": [1,2,4],
+		"type": "L"
+	},
+	"20461": {
+		"ID": "COMP 3260",
+		"title": 'Computer Network Security',
+		"duration": 50,
+		"start": "0830",
+		"days": [0],
+		"type": "S"
+	},
+
+	"20462": {
+		"ID": "COMP 3270",
+		"title": 'Computer Networks',
+		"start": "1230",
+		"duration": 50,
+		"days": [0,1,4],
+		"type": "L"
+	},
+	"20463": {
+		"ID": "COMP 3270",
+		"title": 'Computer Networks',
+		"duration": 50,
+		"start": "0930",
+		"days": [0],
+		"type": "S"
+	},
+
+	"20464": {
+		"ID": "COMP 3410",
+		"title": 'Operating Systems',
+		"start": "1130",
+		"duration": 50,
+		"days": [1,2,4],
+		"type": "L"
+	},
+	"20465": {
+		"ID": "COMP 3410",
+		"title": 'Operating Systems',
+		"duration": 50,
+		"start": "1130",
+		"days": [3],
+		"type": "S"
+	},
+
+	"20466": {
+		"ID": "COMP 3450",
+		"title": 'Human-Computer Interaction Design',
+		"start": "1030",
+		"duration": 50,
+		"days": [1,3,4],
+		"type": "L"
+	},
+	"20467": {
+		"ID": "COMP 3450",
+		"title": 'Human-Computer Interaction Design',
+		"duration": 50,
+		"start": "1330",
+		"days": [0],
+		"type": "S"
+	},
+
+	"20468": {
+		"ID": "COMP 3520",
+		"title": 'Software Engineering',
+		"start": "1630",
+		"duration": 50,
+		"days": [0,1,3],
+		"type": "L"
+	},
+	"20469": {
+		"ID": "COMP 3520",
+		"title": 'Software Engineering',
+		"duration": 50,
+		"start": "1630",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20470": {
+		"ID": "COMP 3540",
+		"title": 'Advanced Web Design and Programming',
+		"start": "0930",
+		"duration": 50,
+		"days": [1,3,4],
+		"type": "L"
+	},
+	"20471": {
+		"ID": "COMP 3540",
+		"title": 'Advanced Web Design and Programming',
+		"duration": 50,
+		"start": "0930",
+		"days": [2],
+		"type": "S"
+	},
+
+	"20472": {
+		"ID": "COMP 3610",
+		"title": 'Database Systems',
+		"start": "1330",
+		"duration": 50,
+		"days": [1,2,4],
+		"type": "L"
+	},
+	"20473": {
+		"ID": "COMP 3610",
+		"title": 'Database Systems',
+		"duration": 50,
+		"start": "1030",
+		"days": [0],
+		"type": "S"
+	},
+
+	"20474": {
+		"ID": "COMP 3710",
+		"title": 'Applied Artificial Intelligence',
+		"start": "1430",
+		"duration": 75,
+		"days": [2,4],
+		"type": "L"
+	},
+	"20475": {
+		"ID": "COMP 3710",
+		"title": 'Applied Artificial Intelligence',
+		"duration": 50,
+		"start": "1630",
+		"days": [0],
+		"type": "S"
+	},
+
+	"20476": {
+		"ID": "COMP 4530",
+		"title": 'Advanced Software Engineering',
+		"start": "1530",
+		"duration": 50,
+		"days": [0,2,3],
+		"type": "L"
+	},
+	"20477": {
+		"ID": "COMP 4530",
+		"title": 'Advanced Software Engineering',
+		"duration": 50,
+		"start": "1530",
+		"days": [1],
+		"type": "S"
+	},
+
+	"20478": {
+		"ID": "COMP 4610",
+		"title": 'Advanced Database Systems',
+		"start": "1630",
+		"duration": 50,
+		"days": [0],
+		"type": "L"
+	},
+	"20479": {
+		"ID": "COMP 4610",
+		"title": 'Advanced Database Systems',
+		"duration": 75,
+		"start": "1530",
+		"days": [3],
+		"type": "L"
+	},
+	"204780": {
+		"ID": "COMP 4610",
+		"title": 'Advanced Database Systems',
+		"duration": 50,
+		"start": "1330",
+		"days": [0],
+		"type": "S"
+	},
+
+	"20481": {
+		"ID": "COMP 4910",
+		"title": 'Computing Science Project - Time TBA',
+		"start": "0000",
+		"duration": 50,
+		"days": [0],
+		"type": "L"
+	},
+
+	"20482": {
+		"ID": "COMP 4980",
+		"title": 'ST: Software Testing',
+		"start": "0830",
+		"duration": 75,
+		"days": [2,4],
+		"type": "L"
+	},
+	"20484": {
+		"ID": "COMP 4980",
+		"title": 'ST: Software Testing',
+		"duration": 50,
+		"start": "1530",
+		"days": [0],
+		"type": "S"
+	},
+
+
+
+
+
+
+	"10901": {
+	    "ID": "MATH 1070",
+	    "title": "Fundamentals of Mathematics for Business and Economics",
+	    "start": "1130",
+	    "duration": 50,
+	    "days": [
+	      1,
+	      2,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201810"
+	  },
+	  "10916": {
+	    "ID": "MATH 1100",
+	    "title": "Finite Mathematics with Applications 1",
+	    "start": "0830",
+	    "duration": 50,
+	    "days": [
+	      0,
+	      2,
+	      3
+	    ],
+	    "type": "L",
+	    "timecode": "201810"
+	  },
+	  "10958": {
+	    "ID": "MATH 2110",
+	    "title": "Calculus 3",
+	    "start": "1130",
+	    "duration": 50,
+	    "days": [
+	      0,
+	      1,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201810"
+	  },
+	  "10960": {
+	    "ID": "MATH 2120",
+	    "title": "Linear Algebra 1",
+	    "start": "1430",
+	    "duration": 50,
+	    "days": [
+	      1,
+	      2,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201810"
+	  },
+	  "20925": {
+	    "ID": "MATH 2240",
+	    "title": "Differential Equations 1",
+	    "start": "1030",
+	    "duration": 50,
+	    "days": [
+	      1,
+	      2,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  },
+	  "20927": {
+	    "ID": "MATH 3030",
+	    "title": "Introduction to Stochastic Processes",
+	    "start": "1430",
+	    "duration": 50,
+	    "days": [
+	      1,
+	      2,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  },
+	  "20929": {
+	    "ID": "MATH 3170",
+	    "title": "Calculus 4",
+	    "start": "1030",
+	    "duration": 50,
+	    "days": [
+	      0,
+	      3
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  },
+	  "20931": {
+	    "ID": "MATH 3220",
+	    "title": "Abstract Algebra",
+	    "start": "1530",
+	    "duration": 50,
+	    "days": [
+	      0,
+	      1,
+	      4
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  },
+	  "21987": {
+	    "ID": "MATH 4990",
+	    "title": "ST: Applied Math",
+	    "start": "1130",
+	    "duration": 75,
+	    "days": [
+	      0
+	    ],
+	    "type": "L",
+	    "timecode": "201720"
+	  }
+};
+
 
 
 </script>
@@ -1271,7 +1246,7 @@ function CourseItem(data, parent) {
 
 	//Cyan, yellow, light green, pink, orange, purple, greenish, green, red, blue, off-yellow, light orange, green, brown, blue-grey,
 const COLORS = ['#00FFFF', '#FFFF00', '#99ff33', '#ff3399', '#f88f23', '#df80ff', '#00ffcc', '#00b18f', 
-			'#ff0000', '#84aaff', '#f9d4ac', '#00cc66', '#996633', '#669999', '#C39BD3', '#FCF3CF', 
+			'#ff0000', '#84aaff', '#f9d4ac', '#00cc66', '#d0ac09', '#669999', '#C39BD3', '#FCF3CF', 
 		   '#D5D8DC', '#E6B0AA', '#AED6F1', '#FA8072', '#FF5733', '#00FF00', '#008080', '#13D666', 
 		   '#13D6C8', '#5DBCD2','#ff0000', '#84aaff', '#ffffcc', '#f9d4ac'];
 var unassigned_colors = [];
@@ -1413,16 +1388,21 @@ function addCourseToTable(course_offering) {
 			}
 			scheduleVizTable[day][t].push(item)
 			blocks_touched.push({day: day, time: t});
+		
+			if (t == '1900') {
+				$('tr.1900').show();
+			} else if (t == '1930') {
+				$('tr.1930').show();
+			}
 		}
-
 		// console.log(scheduleVizTable);
-
 		doBlockLayout(blocks_touched);
 
 		// console.log(scheduleVizTable);
 	}
 	// console.log(course_offering.crn, dom_holder);
 
+	return color;
 }
 
 function removeCourseFromTable(crn) {
@@ -1439,6 +1419,7 @@ function removeCourseFromTable(crn) {
 
 			if (i == 0) {
 				unassigned_colors.push(item.colorIndex);
+				unassigned_colors = unassigned_colors.sort((a,b) => b-a);
 			}
 			
 			// scheduleVizTable[item.day]
@@ -1468,6 +1449,13 @@ function removeCourseFromTable(crn) {
 			item.textDom.remove();
 
 			doBlockLayout(blocks_touched);
+		}
+
+		if (scheduleVizTable.every((wd) => !wd['1900'] || wd['1900'].length == 0)) {
+			$('tr.1900').hide();
+		}
+		if (scheduleVizTable.every((wd) => !wd['1930'] || wd['1930'].length == 0)) {
+			$('tr.1930').hide();
 		}
 		
 		// console.log(scheduleVizTable);
@@ -1714,77 +1702,25 @@ function doBlockLayout(blocks) {
 
 $(document).ready(() => {
 
-	$('.filter-li').click(function() {
-		$(this).find('.course-checkbox').click();
-	});
+	var params = new URLSearchParams(window.location.search);
+	if (params.has('oldData')) {
+		COURSE_DATA = OLD_COURSE_DATA;
+	}
 
-
-	$('.course-checkbox').click(function(e) {
-		var crn = $(this).parent().attr('value');
-
-		if ($(this).prop('checked')) {
-			addCourseToTable(JsontoClass(crn));
-		} else {
-			removeCourseFromTable(crn);
-		}
-
-		e.stopPropagation();
-	});
-	
-	// var comp333 = {
-	// 	title: 'Course title',
-	// 	courseNumber: 'COMP333',
-	// 	// times: [{start: '0930', day: 1, duration: 30, type: 'L'}, {start: '0930', day: 3, duration: 50, type: 'L'}]
-	// 	times: [{start: '0900', day: 1, duration: 80, type: 'L'}]
-	// };
-
-	// var comp444 = {
-	// 	title: 'Course title',
-	// 	courseNumber: 'COMP444',
-	// 	// times: [{start: '0930', day: 1, duration: 30, type: 'L'}, {start: '0930', day: 3, duration: 50, type: 'L'}]
-	// 	times: [{start: '0900', day: 1, duration: 80, type: 'L'}]
-	// };
-
-	// var comp777 = {
-	// 	title: 'Course title',
-	// 	courseNumber: 'COMP777',
-	// 	times: [{start: '0900', day: 1, duration: 50, type: 'L'}]
-	// };
-
-	// var comp888 = {
-	// 	title: 'Course title',
-	// 	courseNumber: 'COMP888',
-	// 	times: [{start: '0900', day: 1, duration: 50, type: 'L'}]
-	// };
-	// var comp999 = {
-	// 	title: 'Course title',
-	// 	courseNumber: 'COMP999',
-	// 	times: [{start: '0930', day: 2, duration: 90, type: 'L'}]
-	// };
-
-	// var compTest = {
-	// 	courseNumber: "COMP1020",
-	// 	times: [{start: "1530", day: 3, duration: 50, type: "S"}],
-	// 	title: 'title'
-	// }
-
-	// addCourseToTable(comp333);
-	// addCourseToTable(comp444);
-	// addCourseToTable(comp777);
-	// addCourseToTable(comp888);
-	// addCourseToTable(comp999);
-	// addCourseToTable(compTest);
-
-	var crns_to_show = ['10458', '10459', '10460', '10465', '10466', '10467', '10468', '10471', '10472', '10473'];
-
-	// for (var i = 0; i < crns_to_show.length; i++) {
-	// 	var course_data = JsontoClass(crns_to_show[i]);
-	// 	addCourseToTable(course_data);
-	// }
 
 	for (var i in COURSE_DATA) {
 		var item = COURSE_DATA[i];
 		var crn = i;
+
+		if (item.type == 'S') {
+			continue;		// Do not display seminar items.
+		}
+
+		var prev_item = COURSE_DATA[i - 1];
+		if (prev_item && prev_item.ID == item.ID) {
+			continue;		// Skip duplicates. This is a workaround with issue of item not being able to store heterogenous times.
+		}
+
 		var course_id = item.ID;
 		var course_title = item.title || '&nbsp';
 		var $item = $('<li class="filter-li"><data value="' + crn + '">' + course_id + '<input class="course-checkbox" type="checkbox"><br>' + course_title +'</data></li>');
@@ -1799,7 +1735,27 @@ $(document).ready(() => {
 	}
 
 
-	// JsontoClass();
+	$('.filter-li').click(function() {
+		$(this).find('.course-checkbox').click();
+	});
+
+	$('.course-checkbox').click(function(e) {
+		var crn = $(this).parent().attr('value');
+
+		if ($(this).prop('checked')) {
+			var color_used = addCourseToTable(JsontoClass(crn));
+
+			$(this).parent().parent().addClass('text-shadow');
+			$(this).parent().parent().css('background-color', COLORS[color_used]);
+		} else {
+			removeCourseFromTable(crn);
+			$(this).parent().parent().removeClass('text-shadow');
+			$(this).parent().parent().css('background-color', '');
+		}
+
+		e.stopPropagation();
+	});
+
 });
 
 
@@ -1815,25 +1771,62 @@ function JsontoClass(crn){
 		return false;
 	}
 
-	var ctitle = "Insert Class Title";
-	var ccourseNum = classes[crn]['ID'].replace(" ","");
-	var cduration = classes[crn]['duration'];
-	var cdays = classes[crn]['days'];
-	var cstart = classes[crn]['start'];
-	var ctype = classes[crn]['type'];
-	var ccrn = classes[crn];
+	var lecture_class = classes[crn];
 
-	var ctimes = [];
+	var ctitle = lecture_class;
+	var ccourseNum = lecture_class['ID'].replace(" ","");
+	var cduration = lecture_class['duration'];
+	var cdays = lecture_class['days'];
+	var cstart = lecture_class['start'];
+	var ctype = lecture_class['type'];
+	// var ccrn = lecture_class;
 
-	for(var day in cdays){
-		ctimes.push({'start':cstart,'day': cdays[day], 'duration': cduration, 'type': ctype});
+	
+	var class_times = [];
+	for(var day in lecture_class.days){
+
+		if (typeof(lecture_class.days[day]) == "number") {
+			class_times.push({'start': lecture_class.start,
+											  'day': lecture_class.days[day], 
+											  'duration': lecture_class.duration,
+											  'type': lecture_class.type
+											 });
+		} else {
+			var time = lecture_class.days[day];
+			class_times.push({'start': time.start,
+											  'day': time.day, 
+											  'duration': time.duration,
+											  'type': lecture_class.type
+											 });
+		}
+
+	}
+
+	var next_crn = Number(crn) + 1;
+
+	var lec_2_crn = next_crn;
+	var lec_2_class = classes[lec_2_crn.toString()];
+	if (lec_2_class && lec_2_class.ID == lecture_class.ID && lec_2_class.type == 'L') {
+		for (var day in lec_2_class.days) {
+			class_times.push({'start': lec_2_class.start, 'day': lec_2_class.days[day], 'duration': lec_2_class.duration, 'type': lec_2_class.type})
+		}
+		next_crn += 1;
+	}
+
+
+	var lab_crn = next_crn;
+	var lab_class = classes[lab_crn.toString()];
+	if (lab_class && lab_class.ID == lecture_class.ID && lab_class.type == 'S') {
+		for (var day in lab_class.days) {
+			class_times.push({'start': lab_class.start, 'day': lab_class.days[day], 'duration': lab_class.duration, 'type': lab_class.type})
+		}
 	}
 
 	var newclass = {
 		crn: crn,
 		title:ctitle,
 		courseNumber: ccourseNum,
-		times:ctimes
+		times:class_times
 	}
 
 	// console.log(newclass);
@@ -1909,6 +1902,13 @@ grey700 #616161
 
 .filter-li {
 	padding: 4px;
+}
+
+.filter-li.text-shadow {
+	font-weight: 700;
+	letter-spacing: 0.2px;
+	text-shadow: 0px 0px 1px #00000073, 1px 1px 1px #00000078, -1px -1px 1px #00000070, 0px 1px 1px #00000069, 1px 0px 1px #00000094;
+	color: white;
 }
 
 .container.filter {
@@ -2106,7 +2106,10 @@ table.schedule-table {
 	letter-spacing: 1px;
 	margin-left: auto;
 	margin-right: auto;
+	user-select: none;
 }
+
+
 
 /* For styling nth column */
 /*  .table tr > *:nth-child(2)   */
@@ -2131,7 +2134,7 @@ table.schedule-table {
 
 <label for="term"> Term: </label> 
 <select name="term"> 
-	<option value="Fall 2017"> Fall 2017 </option>
+	<option value="Winter 2018">Winter 2018</option>
 	<!-- <option value="Winter 2018"> Winter 2018 </option> -->
 </select>
 
@@ -2151,7 +2154,7 @@ table.schedule-table {
 				COMP 1xxx </li>
 					
 				<ul class="third-list 1000" >
-					<li class='filter-li'> <data value="10418"> COMP 1020 <input class='course-checkbox' type="checkbox">
+					<!-- <li class='filter-li'> <data value="10418"> COMP 1020 <input class='course-checkbox' type="checkbox">
 					<br> Introduction to Spreadsheets </data></li>
 					
 					<li class='filter-li'> <data value="10420"> COMP 1030 <input class='course-checkbox' type="checkbox">
@@ -2162,7 +2165,7 @@ table.schedule-table {
 					<br> Computer System Maintenance </data></li>
 					
 					<li class='filter-li'> <data value="10423"> COMP 1070 <input class='course-checkbox' type="checkbox">
-					<br> Introduction to Digital Media</data></li>
+					<br> Introduction to Digital Media</data></li> -->
 
 				</ul>
 			<li onclick="handleListClick.call(this)"> 
@@ -2171,7 +2174,7 @@ table.schedule-table {
 				COMP 2xxx </li>
 			
 			<ul class="third-list 2000" >
-					<li class='filter-li'> <data value="10447">  COMP 2130 <input class='course-checkbox' type="checkbox">
+					<!-- <li class='filter-li'> <data value="10447">  COMP 2130 <input class='course-checkbox' type="checkbox">
 					<br> Introduction to Computer Systems</data></li>
 					
 					<li class='filter-li'> <data value="10453"> COMP 2210 <input class='course-checkbox' type="checkbox">
@@ -2181,7 +2184,7 @@ table.schedule-table {
 					<br> Web Site Design and Development </data></li>
 					
 					<li class='filter-li'> <data value="10459"> COMP 2920 <input class='course-checkbox' type="checkbox">
-					<br> Software Architecture and Design</data></li>
+					<br> Software Architecture and Design</data></li> -->
 					
 				</ul>
 			<li onclick="handleListClick.call(this)"> 
@@ -2190,7 +2193,7 @@ table.schedule-table {
 				COMP 3xxx </li>
 			
 			<ul class="third-list 3000">
-					<li class='filter-li'> <data value="20398">  COMP 3160 <input class='course-checkbox' type="checkbox">
+					<!-- <li class='filter-li'> <data value="20398">  COMP 3160 <input class='course-checkbox' type="checkbox">
 					<br> Mobile Application Development 2</data></li>
 					
 					<li class='filter-li'> <data value="20400"> COMP 3270 <input class='course-checkbox' type="checkbox">
@@ -2200,22 +2203,22 @@ table.schedule-table {
 					<br> Operating Systems</data></li>
 
 					<li class='filter-li'> <data value="20404"> COMP 3520 <input class='course-checkbox' type="checkbox">
-					<br> Software Engineering</data></li>
+					<br> Software Engineering</data></li> -->
 				</ul>
 			
 			<li onclick="handleListClick.call(this)">
 				<img src="images/chevron.png" class="image-inner"/>
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				COMP 4xxx </li>
-				<ul class="third-list">
-					<li class='filter-li'> <data value="20410">  COMP 4530 <input class='course-checkbox' type="checkbox">
-					<br> Advanced Software Engineering</data></li>
+				<ul class="third-list 4000">
+					<!-- <li class='filter-li'> <data value="20410">  COMP 4530 <input class='course-checkbox' type="checkbox">
+					<br> Advanced Software Engineering</data></li> -->
 
 					<!-- <li class='filter-li'> <data value="20423"> COMP 4980<input class='course-checkbox' type="checkbox">
 					<br> ST: Software Testing</data></li> -->
 
-					<li class='filter-li'> <data value="21562"> COMP 4980<input class='course-checkbox' type="checkbox">
-					<br> ST: Virtual Reality</data></li>
+					<!-- <li class='filter-li'> <data value="21562"> COMP 4980<input class='course-checkbox' type="checkbox">
+					<br> ST: Virtual Reality</data></li> -->
 				</ul>
 			
 		</ul>
@@ -2224,29 +2227,29 @@ table.schedule-table {
 		<img src="images/chevron.png" class="image"/>
 		<img src="images/chevronleft.png" class="image-left"/>
 		MATH - Mathematics </li>
-	<ul class="secondary-list">
+	<ul class="secondary-list MATH">
 			<li onclick="handleListClick.call(this)">
 				<img src="images/chevron.png" class="image-inner"/>
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				MATH 1xxx </li>
-				<ul class="third-list" >
+				<ul class="third-list 1000" >
 					<!-- <li class='filter-li'> <data value="10898"> MATH 1000 <input class='course-checkbox' type="checkbox">
 						<br> Pre-Calculus
 						</data></li> -->
-					<li class='filter-li'> <data value="10901"> MATH 1070 <input class='course-checkbox' type="checkbox">
+					<!-- <li class='filter-li'> <data value="10901"> MATH 1070 <input class='course-checkbox' type="checkbox">
 						<br> Fundamentals of Mathematics for Business and Economics
 						</data></li>
 					<li class='filter-li'> <data value="10916"> MATH 1100 <input class='course-checkbox' type="checkbox">
 						<br> Finite Mathematics with Applications 1 
-						</data></li>
+						</data></li> -->
 				</ul>
 			<li onclick="handleListClick.call(this)">
 				<img src="images/chevron.png" class="image-inner"/>
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				MATH 2xxx </li>
 			
-			<ul class="third-list" >
-					<li class='filter-li'> <data value="10958">   MATH 2110 <input class='course-checkbox' type="checkbox">
+			<ul class="third-list 2000" >
+					<!-- <li class='filter-li'> <data value="10958">   MATH 2110 <input class='course-checkbox' type="checkbox">
 					<br> Calculus 3</data></li>
 					
 					<li class='filter-li'> <data value="10960"> MATH 2120 <input class='course-checkbox' type="checkbox">
@@ -2255,31 +2258,31 @@ table.schedule-table {
 					<li class='filter-li'> <data value="20925"> MATH 2240 <input class='course-checkbox' type="checkbox">
 					<br> Differential Equations 1  
 					
-					</data></li>
+					</data></li> -->
 				</ul>
 			<li onclick="handleListClick.call(this)">
 				<img src="images/chevron.png" class="image-inner"/>
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				MATH 3xxx </li>
 			
-			<ul class="third-list">
-					<li class='filter-li'> <data value="20927">  MATH 3030 <input class='course-checkbox' type="checkbox">
+			<ul class="third-list 3000">
+					<!-- <li class='filter-li'> <data value="20927">  MATH 3030 <input class='course-checkbox' type="checkbox">
 					<br> Introduction to Stochastic Processes </data></li>
 
 					<li class='filter-li'> <data value="20929"> MATH 3170 <input class='course-checkbox' type="checkbox">
 					<br> Calculus 4</data></li>
 					
 					<li class='filter-li'> <data value="20931"> MATH 3220 <input class='course-checkbox' type="checkbox">
-					<br> Abstract Algebra </data></li>
+					<br> Abstract Algebra </data></li> -->
 				</ul>
 			
 			<li onclick="handleListClick.call(this)"> 
 				<img src="images/chevron.png" class="image-inner"/>
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				MATH 4xxx </li>
-				<ul class="third-list">
-					<li class='filter-li'> <data value="21987">  MATH 4990 <input class='course-checkbox' type="checkbox">
-					<br> ST: Applied Math</data></li>
+				<ul class="third-list 4000">
+					<!-- <li class='filter-li'> <data value="21987">  MATH 4990 <input class='course-checkbox' type="checkbox">
+					<br> ST: Applied Math</data></li> -->
 				</ul>
 			
 		</ul>
@@ -2487,6 +2490,23 @@ table.schedule-table {
 	  </tr>
 	  <tr class='1830'>
 	    <td><span class='time-30-text'>6:30PM</span></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	  </tr>
+
+	  <tr class='1900' style="display: none">
+	    <td><span class='time-00-text'>7:00PM</span></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
+	  </tr>
+	  <tr class='1930' style="display: none">
+	    <td><span class='time-30-text'>7:30PM</span></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
