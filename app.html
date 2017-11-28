@@ -1719,7 +1719,6 @@ $(document).ready(() => {
 	});
 
 
-	$('.course-checkbox').click(function() {
 	$('.course-checkbox').click(function(e) {
 		var crn = $(this).parent().attr('value');
 
@@ -1782,6 +1781,22 @@ $(document).ready(() => {
 	// 	var course_data = JsontoClass(crns_to_show[i]);
 	// 	addCourseToTable(course_data);
 	// }
+
+	for (var i in COURSE_DATA) {
+		var item = COURSE_DATA[i];
+		var crn = i;
+		var course_id = item.ID;
+		var course_title = item.title || '&nbsp';
+		var $item = $('<li class="filter-li"><data value="' + crn + '">' + course_id + '<input class="course-checkbox" type="checkbox"><br>' + course_title +'</data></li>');
+
+		var department = course_id.match(/[a-zA-Z]{3,4}/)[0].toUpperCase();
+		var year = course_id.match(/[0-9]{3,4}/)[0];
+		year = Math.floor(Number(year) / 1000) * 1000;
+
+		var selector = 'ul.' + department + ' ul.third-list.' + year;
+
+		$(selector).append($item);
+	}
 
 
 	// JsontoClass();
@@ -2129,13 +2144,13 @@ table.schedule-table {
 		<img src="images/chevronleft.png" class="image-left"/>
 		COMP - Computing Science
 	</li>
-		<ul class="secondary-list">
+		<ul class="secondary-list COMP">
 			<li onclick="handleListClick.call(this)"> 
 				<img src="images/chevron.png" class="image-inner"/>
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				COMP 1xxx </li>
 					
-				<ul class="third-list" >
+				<ul class="third-list 1000" >
 					<li class='filter-li'> <data value="10418"> COMP 1020 <input class='course-checkbox' type="checkbox">
 					<br> Introduction to Spreadsheets </data></li>
 					
@@ -2155,7 +2170,7 @@ table.schedule-table {
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				COMP 2xxx </li>
 			
-			<ul class="third-list" >
+			<ul class="third-list 2000" >
 					<li class='filter-li'> <data value="10447">  COMP 2130 <input class='course-checkbox' type="checkbox">
 					<br> Introduction to Computer Systems</data></li>
 					
@@ -2174,7 +2189,7 @@ table.schedule-table {
 				<img src="images/chevronleft.png" class="image-left-inner"/>
 				COMP 3xxx </li>
 			
-			<ul class="third-list">
+			<ul class="third-list 3000">
 					<li class='filter-li'> <data value="20398">  COMP 3160 <input class='course-checkbox' type="checkbox">
 					<br> Mobile Application Development 2</data></li>
 					
