@@ -180,23 +180,26 @@ var COURSE_DATA = {
 	},
 
 	"20445": {
-		"ID": "COMP 2130",
+		"ID": "COMP 2130&#8209;01",
 		"title": 'Introduction to Computer Systems',
-		"start": "1130",
-		"duration": 75,
-		"days": [0,2],
-		"type": "L"
-	},
-	"20446": {
-		"ID": "COMP 2130",
-		"title": 'Introduction to Computer Systems',
+		"start": "1230",
 		"duration": 50,
-		"start": "0830",
-		"days": [2],
-		"type": "S"
+		"days": [{"day": 0, "start": "1230", "duration": 50},
+						 {"day": 1, "start": "1130", "duration": 50},
+						 {"day": 2, "start": "1130", "duration": 110}],
+		"type": "L"
 	},
 
 	"20447": {
+		"ID": "COMP 2130&#8209;02",
+		"title": 'Introduction to Computer Systems',
+		"start": "0830",
+		"duration": 50,
+		"days": [0,1,2,3],
+		"type": "L"
+	},
+
+	"20449": {
 		"ID": "COMP 2160",
 		"title": 'Mobile Application Development 1',
 		"start": "1730",
