@@ -1388,10 +1388,19 @@ function addCourseToTable(course_offering) {
 			}
 			scheduleVizTable[day][t].push(item)
 			blocks_touched.push({day: day, time: t});
-		
-			if (t == '1900') {
+			
+			if (t == '1800') {
+				$('tr.1800').show();
+			} else if (t == '1830') {
+				$('tr.1800').show();
+				$('tr.1830').show();
+			} else if (t == '1900') {
+				$('tr.1800').show();
+				$('tr.1830').show();
 				$('tr.1900').show();
 			} else if (t == '1930') {
+				$('tr.1800').show();
+				$('tr.1830').show();
 				$('tr.1900').show();
 				$('tr.1930').show();
 			}
@@ -1464,11 +1473,16 @@ function removeCourseFromTable(crn) {
 			}
 		}
 
-		
 		if (scheduleVizTable.every((wd) => !wd['1930'] || wd['1930'].length == 0)) {
 			$('tr.1930').hide();
 			if (scheduleVizTable.every((wd) => !wd['1900'] || wd['1900'].length == 0)) {
 				$('tr.1900').hide();
+				if (scheduleVizTable.every((wd) => !wd['1830'] || wd['1830'].length == 0)) {
+					$('tr.1830').hide();
+					if (scheduleVizTable.every((wd) => !wd['1800'] || wd['1800'].length == 0)) {
+						$('tr.1800').hide();
+					}
+				}
 			}
 		}
 		
@@ -2536,7 +2550,7 @@ span.time-30-text {
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	  </tr>
 
-	  <tr class='1800'>
+	  <tr class='1800' style="display: none">
 	    <td><span class='time-00-text'>6:00PM</span></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
@@ -2544,7 +2558,7 @@ span.time-30-text {
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	  </tr>
-	  <tr class='1830'>
+	  <tr class='1830' style="display: none">
 	    <td><span class='time-30-text'>6:30PM</span></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
