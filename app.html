@@ -1322,13 +1322,16 @@ function addCourseItemToCell(course_item, $cell) {
 		// console.log($texts.children());
 		$($texts.children()[0]).css('float', 'left');
 		$($texts.children()[0]).css('width', '100px');
+		$($texts.children()[1]).css('float', '');
 		$($texts.children()[2]).insertBefore($($texts.children()[2]).prev());
 	} else if (num_texts > 3) {
 		$($texts.children()[0]).css('float', 'left');
 		$($texts.children()[0]).css('width', '100px');
+		$($texts.children()[1]).css('float', 'right');
 		// $($texts.children()[2]).insertBefore($($texts.children()[2]).prev());
 		$($texts.children()[2]).css('float', 'left');
 		$($texts.children()[2]).css('width', '100px');
+		$($texts.children()[3]).css('float', 'right');
 	}
 }
 
