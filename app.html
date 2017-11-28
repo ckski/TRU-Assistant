@@ -1766,7 +1766,6 @@ $(document).ready(() => {
 				var selections = params.get('selected').split(',');
 				selections.splice(selections.indexOf(crn), 1);
 				params.set('selected', selections.join(','));
-				console.log("params: " + params);
 				window.history.replaceState({}, '', `${location.pathname}?${params}`);
 			}
 
