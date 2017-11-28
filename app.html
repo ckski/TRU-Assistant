@@ -1392,7 +1392,13 @@ function addCourseToTable(course_offering) {
 			if (t == '1900') {
 				$('tr.1900').show();
 			} else if (t == '1930') {
+				$('tr.1900').show();
 				$('tr.1930').show();
+			}
+
+			if (t == '0800' || t == '0830') {
+				$('tr.0800').show();
+				$('tr.0830').show();
 			}
 		}
 		// console.log(scheduleVizTable);
@@ -1451,11 +1457,19 @@ function removeCourseFromTable(crn) {
 			doBlockLayout(blocks_touched);
 		}
 
-		if (scheduleVizTable.every((wd) => !wd['1900'] || wd['1900'].length == 0)) {
-			$('tr.1900').hide();
+		if (scheduleVizTable.every((wd) => !wd['0830'] || wd['0830'].length == 0)) {
+			if (scheduleVizTable.every((wd) => !wd['0800'] || wd['0800'].length == 0)) {
+				$('tr.0830').hide();
+				$('tr.0800').hide();
+			}
 		}
+
+		
 		if (scheduleVizTable.every((wd) => !wd['1930'] || wd['1930'].length == 0)) {
 			$('tr.1930').hide();
+			if (scheduleVizTable.every((wd) => !wd['1900'] || wd['1900'].length == 0)) {
+				$('tr.1900').hide();
+			}
 		}
 		
 		// console.log(scheduleVizTable);
@@ -2352,7 +2366,7 @@ span.time-30-text {
 	  </tr>
 	</thead>
 	<tbody>
-	  <tr class='0800'>
+	  <tr class='0800' style="display: none">
 	    <td><span class='time-00-text'>8:00AM</span></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
@@ -2360,7 +2374,7 @@ span.time-30-text {
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	  </tr>
-	  <tr class='0830'>
+	  <tr class='0830' style="display: none">
 	    <td><span class='time-30-text'>8:30AM</span></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
 	    <td class='course-item'><div class='course-item-blocks'></div><div class='course-item-texts'></div></td>
