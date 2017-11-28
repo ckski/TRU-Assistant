@@ -1720,6 +1720,7 @@ $(document).ready(() => {
 
 
 	$('.course-checkbox').click(function() {
+	$('.course-checkbox').click(function(e) {
 		var crn = $(this).parent().attr('value');
 
 		if ($(this).prop('checked')) {
@@ -1728,6 +1729,7 @@ $(document).ready(() => {
 			removeCourseFromTable(crn);
 		}
 
+		e.stopPropagation();
 	});
 	
 	// var comp333 = {
